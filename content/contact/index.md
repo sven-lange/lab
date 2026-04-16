@@ -8,12 +8,12 @@ showReadingTime = false
 showTableOfContents = false
 +++
 
-We welcome inquiries from trainees, collaborators, and prospective partners.
+We welcome inquiries from prospective students, post-docs and collaborators.
 
 ## Email
 
-- General: [lab@example.edu](mailto:lab@example.edu)
-- PI: [sven.lange@example.edu](mailto:sven.lange@example.edu)
+
+[sven.lange {at} example.edu](mailto:sven.lange {at} example.edu)
 
 ## Location
 
@@ -23,7 +23,7 @@ City, State/Country
 
 ## Social and Scholarly Profiles
 
-- [Google Scholar](https://scholar.google.com/)
-- [ORCID](https://orcid.org/)
-- [GitHub](https://github.com/)
-- [Bluesky](https://bsky.app/)
+- [Google Scholar](https://scholar.google.com/citations?user=xookvIMAAAAJ&hl=en&authuser=1)
+- [ORCID](https://orcid.org/0000-0002-6011-8647)
+- [GitHub](https://github.com/sven-lange)
+- [Bluesky](https://bsky.app/profile/sven-m-lange.bsky.social)

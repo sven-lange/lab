@@ -19,6 +19,4 @@ featured = "/img/Lange_Sven.jpg"
   ]
 +++
 
-Sven M. Lange leads the lab's research program at the intersection of computational neuroscience and translational mental health science.
-
-Current interests include predictive modeling of cognitive trajectories, precision intervention mapping, and open, reproducible workflows for interdisciplinary neuroscience.
+Sven leads the lab's research program.
