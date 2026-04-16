@@ -1,0 +1,25 @@
++++
+title = "test"
+date = '2025-09-18T00:00:00-04:00'
+draft = false
+summary = "summary text."
+showAuthor = false
+authors = ["Sven M. Lange", "Collaborator Name"]
+tags = ["publication", "test"]
+[params]
+  publicationType = "Preprint"
+  venue = "bioRxiv"
+  year = 2025
+  doi = "10.0000/example-doi-2025-002"
+  paperURL = "https://doi.org/"
+  pdfURL = "https://example.org/"
++++
+
+## Citation
+
+Lange SM, Collaborator N. An intervention atlas for computationally defined neurocognitive subtypes. bioRxiv. 2025.
+
+## Links
+
+[DOI](https://doi.org/10.0000/example-doi-2025-002)
+[PDF](https://example.org/papers/intervention-atlas-2025.pdf)

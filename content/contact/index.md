@@ -12,8 +12,7 @@ We welcome inquiries from prospective students, post-docs and collaborators.
 
 ## Email
 
-
-[sven.lange {at} example.edu](mailto:sven.lange {at} example.edu)
+sven.lange {at} example.edu
 
 ## Location
 

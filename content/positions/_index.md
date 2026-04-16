@@ -17,10 +17,5 @@ We list active opportunities here and link directly to official application port
 
 - No active postings at this time.
 
-## Application Channels
-
-- University jobs portal: https://example.edu/jobs
-- Graduate admissions: https://example.edu/graduate-admissions
-- Postdoctoral office: https://example.edu/postdoctoral
 
 Please check back regularly or contact us directly through the [Contact](/contact/) page.

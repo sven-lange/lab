@@ -7,13 +7,14 @@ showAuthor = false
 showDate = false
 showReadingTime = false
 showSummary = true
-cardView = true
+cardView = false
 +++
 
 ## Current Members
 
-The lab is currently in its launch phase. Member profiles include a photo, short bio, and links.
+The lab is currently in its launch phase.
 
-## Alumni
 
-Alumni profiles will appear here as the lab grows.
+[comment]: ## Alumni
+
+[comment]: Alumni profiles will appear here as the lab grows.
