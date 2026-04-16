@@ -15,19 +15,19 @@ title = "Blowfish"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [params.author]
-   name = "Sven M. Lange"
+  name = "Sven M. Lange"
 #   email = "youremail@example.com"
-   image = "img/Lange_Sven.jpg"
+  image = "img/Lange_Sven.jpg"
 #   imageQuality = 96
 #   headline = "I'm only human"
 #   bio = "A little bit about you"
-   links = [
+  links = [
 #     { email = "mailto:hello@your_domain.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
 #     { blogger = "https://username.blogspot.com/" },
-     { bluesky = "https://bsky.app/profile/sven-m-lange.bsky.social" },
+    { bluesky = "https://bsky.app/profile/sven-m-lange.bsky.social" },
 #     { codepen = "https://codepen.io/username" },
 #     { dev = "https://dev.to/username" },
 #     { discord = "https://discord.gg/invitecode" },
@@ -76,4 +76,4 @@ title = "Blowfish"
 #     { ko-fi = "https://ko-fi.com/username" },
 #     { codeberg = "https://codeberg.org/username"},
 #     { printables = "https://www.printables.com/@username"},
-#   ]
+   ]
