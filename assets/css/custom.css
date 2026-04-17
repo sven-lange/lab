@@ -4,17 +4,30 @@
   max-height: 8rem !important;
 }
 
+/* LANGE and LAB text size in the custom brand block */
+.main-menu > div > a > span:not(.sr-only):not(.logo) {
+  font-size: 1.6rem !important;
+  line-height: 1.2;
+}
+
+/* Icon size between LANGE and LAB */
+.main-menu > div > a > img.logo,
+.main-menu > div > a > span.logo {
+  max-width: 9rem !important;
+  max-height: 9rem !important;
+}
+
 /* Top navigation font size (desktop + mobile menu) */
 .main-menu nav a > span,
 .main-menu > a {
-  font-size: 1.5rem !important;
-  line-height: 1.8;
+  font-size: 1.3rem !important;
+  line-height: 1.5;
 }
 
 /* Slightly larger menu text on wide screens */
 @media (min-width: 1024px) {
   .main-menu nav a > span,
   .main-menu > a {
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
   }
 }
