@@ -12,6 +12,6 @@ showBreadcrumbs = false
 
 ## News
 
+### 2026
 - April 2026: The Lange Lab website is now live.
-- April 2026: We are building our initial data-processing and analysis workflows.
 - Coming soon: Open positions and first project-specific updates.

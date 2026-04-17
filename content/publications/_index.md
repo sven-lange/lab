@@ -10,6 +10,4 @@ showSummary = true
 groupByYear = true
 +++
 
-Publications are maintained as individual markdown entries for simple editing and long-term portability.
-
-If you are looking for preprints or supplemental materials, open a publication page and follow the links.
+Publications are maintained here.

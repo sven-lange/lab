@@ -14,7 +14,3 @@ cardView = false
 
 The lab is currently in its launch phase.
 
-
-[comment]: ## Alumni
-
-[comment]: Alumni profiles will appear here as the lab grows.
