@@ -1,0 +1,109 @@
+<div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  <div>
+    <a href="{{ "" | relLangURL }}" class="flex items-center gap-2">
+      <span class="sr-only">{{ .Site.Title | markdownify }}</span>
+
+      {{ $disableText := .Site.Params.disableTextInHeader | default true }}
+      {{ $titleParts := split (.Site.Title | plainify) " " }}
+      {{ $leftTitle := "" }}
+      {{ $rightTitle := "" }}
+      {{ if gt (len $titleParts) 0 }}
+        {{ $leftTitle = index $titleParts 0 }}
+      {{ end }}
+      {{ if gt (len $titleParts) 1 }}
+        {{ $rightTitle = delimit (after 1 $titleParts) " " }}
+      {{ end }}
+
+      {{ if and (not $disableText) (ne $leftTitle "") }}
+        <span class="text-base font-medium whitespace-nowrap uppercase">
+          {{ $leftTitle | upper | markdownify }}
+        </span>
+      {{ end }}
+
+      {{ if .Site.Params.Logo }}
+        {{ $logo := resources.Get .Site.Params.Logo }}
+        {{ if $logo }}
+          {{ if eq $logo.MediaType.SubType "svg" }}
+            <span class="logo object-scale-down object-left nozoom">
+              {{ $logo.Content | safeHTML }}
+            </span>
+          {{ else }}
+            <img
+              src="{{ $logo.RelPermalink }}"
+              width="{{ div $logo.Width 2 }}"
+              height="{{ div $logo.Height 2 }}"
+              class="logo max-h-20 max-w-20 object-scale-down object-left nozoom"
+              alt="">
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ if and (not $disableText) (ne $rightTitle "") }}
+        <span class="text-base font-medium whitespace-nowrap uppercase">
+          {{ $rightTitle | upper | markdownify }}
+        </span>
+      {{ end }}
+
+      {{ if and (not $disableText) (eq $rightTitle "") (eq $leftTitle "") }}
+        <span class="text-base font-medium whitespace-nowrap uppercase">
+          {{ .Site.Title | upper | markdownify }}
+        </span>
+      {{ end }}
+    </a>
+  </div>
+
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      {{ partial "header/components/desktop-menu.html" . }}
+    </div>
+    <div class="flex md:hidden">
+      {{ partial "header/components/mobile-menu.html" . }}
+    </div>
+  </div>
+</div>
+
+{{ if .Site.Menus.subnavigation }}
+  <div
+    class="main-menu flex pb-3 flex-col items-end justify-between md:justify-start space-x-3 {{ if .Site.Params.Logo }}
+      -mt-[15px]
+    {{ end }}">
+    <div class="hidden md:flex items-center space-x-5">
+      {{ range .Site.Menus.subnavigation }}
+        <a
+          href="{{ .URL }}"
+          {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+            target="_blank"
+          {{ end }}
+          class="flex items-center bf-icon-color-hover">
+          {{ if .Pre }}
+            <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+              {{ partial "icon.html" .Pre }}
+            </span>
+          {{ end }}
+          <span class="text-xs font-light" title="{{ .Title }}">
+            {{ .Name | markdownify }}
+          </span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+
+{{ if .Site.Params.highlightCurrentMenuArea }}
+  <script>
+    (function () {
+      var mainmenu = document.querySelector(".main-menu");
+      if (!mainmenu) return;
+
+      var path = window.location.pathname;
+      var links = mainmenu.querySelectorAll('a[href="' + path + '"]');
+
+      links.forEach(function (link) {
+        var targets = link.querySelectorAll("span");
+        targets.forEach(function (el) {
+          el.classList.add("active");
+        });
+      });
+    })();
+  </script>
+{{ end }}
