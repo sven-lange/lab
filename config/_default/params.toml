@@ -55,6 +55,14 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
   homepageImage = "img/lab-background.gif" # used in: hero, card, and background
+  heroBannerImage = "" # optional static banner shown above the homepage title
+  heroBannerAlt = "" # optional alt text for the homepage banner image
+  heroVideo = "img/CFAP36_TIRF_wild-type_line.mp4" # optional video shown below the homepage title
+  heroVideoAutoplay = true
+  heroVideoMuted = true
+  heroVideoLoop = true
+  heroVideoPlaysInline = true
+  heroVideoControls = false
   showRecent = false
   showRecentItems = 5
   showMoreLink = false

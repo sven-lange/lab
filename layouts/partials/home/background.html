@@ -7,6 +7,8 @@
         <div class="fixed inset-x-0 top-0 -z-10">
           {{ $useDefault := true }}
           {{ $homepageImage := "" }}
+          {{ $heroBannerImage := "" }}
+          {{ $heroVideo := "" }}
           {{ with .Site.Params.defaultBackgroundImage }}
             {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
               {{ $homepageImage = resources.GetRemote . }}
@@ -21,6 +23,20 @@
             {{ else }}
               {{ $homepageImage = resources.Get . }}
               {{ $useDefault = false }}
+            {{ end }}
+          {{ end }}
+          {{ with .Site.Params.homepage.heroBannerImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $heroBannerImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $heroBannerImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ with .Site.Params.homepage.heroVideo }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $heroVideo = resources.GetRemote . }}
+            {{ else }}
+              {{ $heroVideo = resources.Get . }}
             {{ end }}
           {{ end }}
           {{ if $homepageImage }}
@@ -40,10 +56,33 @@
           {{ end }}
         </div>
 
-        <div class="relative h-[1000px] flex items-center justify-center px-6 text-center">
+        <div class="relative h-[1000px] flex flex-col items-center justify-center px-6 py-10 text-center">
+          {{ if $heroBannerImage }}
+            <img
+              class="mb-6 h-auto max-h-28 w-auto max-w-full object-contain"
+              src="{{ $heroBannerImage.RelPermalink }}"
+              alt="{{ .Site.Params.homepage.heroBannerAlt | default "Homepage banner" }}">
+          {{ end }}
           <h1 class="text-4xl md:text-6xl font-extrabold text-neutral-900 dark:text-neutral-100">
             {{ .Title | emojify }}
           </h1>
+          {{ if $heroVideo }}
+            <div class="mt-8 w-full">
+              <div class="relative left-1/2 w-screen -translate-x-1/2">
+                <video
+                  class="block h-auto max-h-[420px] min-h-[220px] w-full object-cover"
+                  {{ if .Site.Params.homepage.heroVideoAutoplay | default true }}autoplay{{ end }}
+                  {{ if .Site.Params.homepage.heroVideoMuted | default true }}muted{{ end }}
+                  {{ if .Site.Params.homepage.heroVideoLoop | default true }}loop{{ end }}
+                  {{ if .Site.Params.homepage.heroVideoPlaysInline | default true }}playsinline{{ end }}
+                  {{ if .Site.Params.homepage.heroVideoControls | default false }}controls{{ end }}
+                  preload="metadata"
+                  aria-label="Homepage feature video">
+                  <source src="{{ $heroVideo.RelPermalink }}" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          {{ end }}
         </div>
       </div>
     </div>

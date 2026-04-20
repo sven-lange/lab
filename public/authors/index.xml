@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Authors on Lange Lab</title><link>https://sven-lange.github.io/lab/authors/</link><description>Recent content in Authors on Lange Lab</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>© 2026 Sven M. Lange</copyright><lastBuildDate>Thu, 18 Sep 2025 00:00:00 -0400</lastBuildDate><atom:link href="https://sven-lange.github.io/lab/authors/index.xml" rel="self" type="application/rss+xml"/><item><title>Collaborator Name</title><link>https://sven-lange.github.io/lab/authors/collaborator-name/</link><pubDate>Thu, 18 Sep 2025 00:00:00 -0400</pubDate><guid>https://sven-lange.github.io/lab/authors/collaborator-name/</guid><description/></item><item><title>Sven M. Lange</title><link>https://sven-lange.github.io/lab/authors/sven-m.-lange/</link><pubDate>Thu, 18 Sep 2025 00:00:00 -0400</pubDate><guid>https://sven-lange.github.io/lab/authors/sven-m.-lange/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on LANGE LAB</title>
+    <link>https://sven-lange.github.io/lab/authors/</link>
+    <description>Recent content in Authors on LANGE LAB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Sven M. Lange</copyright>
+    <lastBuildDate>Thu, 18 Sep 2025 00:00:00 -0400</lastBuildDate><atom:link href="https://sven-lange.github.io/lab/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Collaborator Name</title>
+      <link>https://sven-lange.github.io/lab/authors/collaborator-name/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 -0400</pubDate>
+      
+      <guid>https://sven-lange.github.io/lab/authors/collaborator-name/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sven M. Lange</title>
+      <link>https://sven-lange.github.io/lab/authors/sven-m.-lange/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 -0400</pubDate>
+      
+      <guid>https://sven-lange.github.io/lab/authors/sven-m.-lange/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

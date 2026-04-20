@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>People on Lange Lab</title><link>https://sven-lange.github.io/lab/people/</link><description>Recent content in People on Lange Lab</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>© 2026 Sven M. Lange</copyright><lastBuildDate>Thu, 16 Apr 2026 18:10:00 -0400</lastBuildDate><atom:link href="https://sven-lange.github.io/lab/people/index.xml" rel="self" type="application/rss+xml"/><item><title>Future Lab Member</title><link>https://sven-lange.github.io/lab/people/join-us/</link><pubDate>Thu, 16 Apr 2026 18:10:00 -0400</pubDate><guid>https://sven-lange.github.io/lab/people/join-us/</guid><description>This profile slot can be replaced as the team grows.</description></item><item><title>Sven M. Lange</title><link>https://sven-lange.github.io/lab/people/sven-m-lange/</link><pubDate>Thu, 16 Apr 2026 18:10:00 -0400</pubDate><guid>https://sven-lange.github.io/lab/people/sven-m-lange/</guid><description>Principal Investigator</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>People on LANGE LAB</title>
+    <link>https://sven-lange.github.io/lab/people/</link>
+    <description>Recent content in People on LANGE LAB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Sven M. Lange</copyright>
+    <lastBuildDate>Thu, 16 Apr 2026 18:10:00 -0400</lastBuildDate><atom:link href="https://sven-lange.github.io/lab/people/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Future Lab Member</title>
+      <link>https://sven-lange.github.io/lab/people/join-us/</link>
+      <pubDate>Thu, 16 Apr 2026 18:10:00 -0400</pubDate>
+      
+      <guid>https://sven-lange.github.io/lab/people/join-us/</guid>
+      <description>This profile slot can be replaced as the team grows.</description>
+      
+    </item>
+    
+    <item>
+      <title>Sven M. Lange</title>
+      <link>https://sven-lange.github.io/lab/people/sven-m-lange/</link>
+      <pubDate>Thu, 16 Apr 2026 18:10:00 -0400</pubDate>
+      
+      <guid>https://sven-lange.github.io/lab/people/sven-m-lange/</guid>
+      <description>Principal Investigator</description>
+      
+    </item>
+    
+  </channel>
+</rss>
