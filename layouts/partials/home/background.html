@@ -47,7 +47,21 @@
               {{ $introAnimationFallbackImage = resources.Get . }}
             {{ end }}
           {{ end }}
-          {{ if $homepageImage }}
+          {{ if $introAnimationVideo }}
+            <div class="fixed inset-0 bg-neutral-100 dark:bg-neutral-800"></div>
+            <video
+              id="home-background-video"
+              class="nozoom fixed inset-0 h-screen w-full object-cover"
+              {{ if .Site.Params.homepage.introAnimationAutoplay | default true }}autoplay{{ end }}
+              {{ if .Site.Params.homepage.introAnimationMuted | default true }}muted{{ end }}
+              {{ if .Site.Params.homepage.introAnimationPlaysInline | default true }}playsinline{{ end }}
+              preload="auto"
+              aria-hidden="true"
+              data-loop-after-intro="{{ .Site.Params.homepage.introAnimationLoop | default true }}">
+              <source src="{{ $introAnimationVideo.RelPermalink }}" type="video/webm">
+            </video>
+          {{ end }}
+          {{ if and $homepageImage (not $introAnimationVideo) }}
             {{ $style := "" }}
             {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
             {{ with $.Params.imagePosition | default $defaultPosition }}
@@ -71,21 +85,7 @@
             aria-hidden="true"
             data-threshold="{{ .Site.Params.homepage.introAnimationScrollThreshold | default 64 }}"
             data-reveal-menu="{{ .Site.Params.homepage.menuRevealOnScroll | default true }}">
-            {{ if $introAnimationVideo }}
-              <video
-                class="h-full w-full object-cover"
-                {{ if .Site.Params.homepage.introAnimationAutoplay | default true }}autoplay{{ end }}
-                {{ if .Site.Params.homepage.introAnimationMuted | default true }}muted{{ end }}
-                {{ if .Site.Params.homepage.introAnimationLoop | default true }}loop{{ end }}
-                {{ if .Site.Params.homepage.introAnimationPlaysInline | default true }}playsinline{{ end }}
-                preload="auto"
-                aria-hidden="true">
-                <source src="{{ $introAnimationVideo.RelPermalink }}" type="video/webm">
-                {{ if $introAnimationFallbackImage }}
-                  <img src="{{ $introAnimationFallbackImage.RelPermalink }}" alt="">
-                {{ end }}
-              </video>
-            {{ else }}
+            {{ if and (not $introAnimationVideo) $introAnimationFallbackImage }}
               <img class="h-full w-full object-cover" src="{{ $introAnimationFallbackImage.RelPermalink }}" alt="">
             {{ end }}
           </div>
@@ -132,9 +132,21 @@
   <script>
     (function () {
       var overlay = document.getElementById("home-intro-overlay");
+      var backgroundVideo = document.getElementById("home-background-video");
       var threshold = parseInt((overlay && overlay.dataset.threshold) || "64", 10);
       var revealMenu = ((overlay && overlay.dataset.revealMenu) || "true") === "true";
+      var loopAfterIntro = ((backgroundVideo && backgroundVideo.dataset.loopAfterIntro) || "true") === "true";
       var completed = false;
+      var completionTimer = null;
+
+      function clearListeners() {
+        window.removeEventListener("scroll", onScroll);
+        window.removeEventListener("wheel", onWheel);
+        window.removeEventListener("touchmove", onTouchMove);
+        if (backgroundVideo) {
+          backgroundVideo.removeEventListener("ended", onVideoEnded);
+        }
+      }
 
       function completeIntro() {
         if (completed) return;
@@ -144,13 +156,44 @@
           overlay.classList.add("is-hidden");
         }
 
+        if (completionTimer) {
+          window.clearTimeout(completionTimer);
+        }
+
+        if (backgroundVideo) {
+          backgroundVideo.loop = loopAfterIntro;
+          if (backgroundVideo.ended) {
+            backgroundVideo.currentTime = 0;
+          }
+          var playPromise = backgroundVideo.play();
+          if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(function () {});
+          }
+        }
+
         document.body.classList.remove("home-intro-active");
         document.body.classList.add("home-intro-complete");
-        window.removeEventListener("scroll", onScroll);
+        clearListeners();
       }
 
       function onScroll() {
-        if (window.scrollY >= threshold) {
+        if (window.scrollY > 0 || window.scrollY >= threshold) {
+          completeIntro();
+        }
+      }
+
+      function onWheel(event) {
+        if (event && Math.abs(event.deltaY) > 0) {
+          completeIntro();
+        }
+      }
+
+      function onTouchMove() {
+        completeIntro();
+      }
+
+      function onVideoEnded() {
+        if (window.scrollY <= 0) {
           completeIntro();
         }
       }
@@ -164,12 +207,19 @@
         return;
       }
 
+      if (backgroundVideo) {
+        backgroundVideo.loop = false;
+        backgroundVideo.addEventListener("ended", onVideoEnded);
+      }
+
       window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("wheel", onWheel, { passive: true });
+      window.addEventListener("touchmove", onTouchMove, { passive: true });
       onScroll();
 
-      window.setTimeout(function () {
+      completionTimer = window.setTimeout(function () {
         completeIntro();
-      }, 9000);
+      }, 15000);
     })();
   </script>
 {{ end }}
