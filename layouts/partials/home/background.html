@@ -1,4 +1,12 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+{{ $homeLogo := "" }}
+{{ with .Site.Params.Logo }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ $homeLogo = resources.GetRemote . }}
+  {{ else }}
+    {{ $homeLogo = resources.Get . }}
+  {{ end }}
+{{ end }}
 <article class="prose dark:prose-invert max-w-full">
   <div class="relative">
     <div class="absolute inset-x-0 bottom-0 h-1/2"></div>
@@ -142,6 +150,12 @@
               src="{{ $heroBannerImage.RelPermalink }}"
               alt="{{ .Site.Params.homepage.heroBannerAlt | default "Homepage banner" }}">
           {{ end }}
+          {{ if $homeLogo }}
+            <img
+              class="home-hero-logo nozoom mb-8 h-auto w-auto object-contain"
+              src="{{ $homeLogo.RelPermalink }}"
+              alt="Lab logo">
+          {{ end }}
           <h1 class="text-4xl md:text-6xl font-extrabold text-neutral-900 dark:text-neutral-100">
             {{ .Title | emojify }}
           </h1>
@@ -183,7 +197,6 @@
       var mobileMenuToggle = document.getElementById("mobile-menu-toggle");
       var threshold = parseInt((overlay && overlay.dataset.threshold) || "64", 10);
       var revealMenu = ((overlay && overlay.dataset.revealMenu) || "true") === "true";
-      var loopAfterIntro = ((backgroundVideo && backgroundVideo.dataset.loopAfterIntro) || "true") === "true";
       var completed = false;
       var completionTimer = null;
       var usingMobileVideoMode = false;
@@ -270,26 +283,12 @@
           window.clearTimeout(completionTimer);
         }
 
-        if (usingMobileVideoMode) {
-          hideVideo(mobileVideoLight);
-          hideVideo(mobileVideoDark);
-          var mobileVideo = activeMobileVideo();
-          if (mobileVideo) {
-            mobileVideo.loop = loopAfterIntro;
-            if (mobileVideo.ended) {
-              mobileVideo.currentTime = 0;
-            }
-            showVideo(mobileVideo);
-          }
-        } else if (backgroundVideo) {
-          backgroundVideo.loop = loopAfterIntro;
-          if (backgroundVideo.ended) {
-            backgroundVideo.currentTime = 0;
-          }
-          var playPromise = backgroundVideo.play();
-          if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(function () {});
-          }
+        hideVideo(mobileVideoLight);
+        hideVideo(mobileVideoDark);
+
+        if (backgroundVideo) {
+          backgroundVideo.pause();
+          backgroundVideo.classList.add("is-hidden");
         }
 
         document.body.classList.remove("home-intro-active");

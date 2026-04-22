@@ -70,6 +70,20 @@
   visibility: hidden;
 }
 
+.home-hero-logo {
+  width: min(52vw, 420px);
+  max-width: 78vw;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+body.home-intro-complete .home-hero-logo,
+body:not(.home-intro-active) .home-hero-logo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Home-only menu reveal choreography */
 body.home-intro-active .main-menu,
 body.home-intro-complete .main-menu {
@@ -100,6 +114,11 @@ body.home-intro-complete .main-menu {
 @media (prefers-reduced-motion: reduce) {
   .home-intro-overlay {
     transition: none;
+  }
+
+  .home-hero-logo {
+    transition: none;
+    transform: none;
   }
 
   body.home-intro-active .main-menu,

@@ -109,8 +109,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/lab/css/main.bundle.min.7ee66eb3d308e6ba20e340f1b7ee487120ee24413857b7ea17ef7653ff728b8a31ad0d794edb3d31291394f49240d2aaa55da937767ef5063ffdffdb2c35cc61.css"
-    integrity="sha512-fuZus9MI5rog40Dxt&#43;5IcSDuJEE4V7fqF&#43;92U/9yi4oxrQ15Tts9MSkTlPSSQNKqpV2pN3Z&#43;9QY//f/bLDXMYQ==">
+    href="/lab/css/main.bundle.min.20d462c8933b5d4a891b1b9218c9be754e0960679b5bb6f4726a71edb2eeba1e6959d91006a8304ddd12de5e77c89d03714e069f8f3217d4092255b59c56f196.css"
+    integrity="sha512-INRiyJM7XUqJGxuSGMm&#43;dU4JYGebW7b0cmpx7bLuuh5pWdkQBqgwTd0S3l53yJ0DcU4Gn48yF9QJIlW1nFbxlg==">
 
   
   
@@ -675,6 +675,12 @@
   
   
     
+
+
+  
+    
+  
+
 <article class="prose dark:prose-invert max-w-full">
   <div class="relative">
     <div class="absolute inset-x-0 bottom-0 h-1/2"></div>
@@ -776,6 +782,12 @@
 
         <div class="relative h-[1000px] flex flex-col items-center justify-center px-6 py-10 text-center">
           
+          
+            <img
+              class="home-hero-logo nozoom mb-8 h-auto w-auto object-contain"
+              src="/lab/img/Lab_logo_ry.png"
+              alt="Lab logo">
+          
           <h1 class="text-4xl md:text-6xl font-extrabold text-neutral-900 dark:text-neutral-100">
             Mechanisms of Ubiquitin-Mediated Transport
           </h1>
@@ -828,7 +840,6 @@
       var mobileMenuToggle = document.getElementById("mobile-menu-toggle");
       var threshold = parseInt((overlay && overlay.dataset.threshold) || "64", 10);
       var revealMenu = ((overlay && overlay.dataset.revealMenu) || "true") === "true";
-      var loopAfterIntro = ((backgroundVideo && backgroundVideo.dataset.loopAfterIntro) || "true") === "true";
       var completed = false;
       var completionTimer = null;
       var usingMobileVideoMode = false;
@@ -915,26 +926,12 @@
           window.clearTimeout(completionTimer);
         }
 
-        if (usingMobileVideoMode) {
-          hideVideo(mobileVideoLight);
-          hideVideo(mobileVideoDark);
-          var mobileVideo = activeMobileVideo();
-          if (mobileVideo) {
-            mobileVideo.loop = loopAfterIntro;
-            if (mobileVideo.ended) {
-              mobileVideo.currentTime = 0;
-            }
-            showVideo(mobileVideo);
-          }
-        } else if (backgroundVideo) {
-          backgroundVideo.loop = loopAfterIntro;
-          if (backgroundVideo.ended) {
-            backgroundVideo.currentTime = 0;
-          }
-          var playPromise = backgroundVideo.play();
-          if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(function () {});
-          }
+        hideVideo(mobileVideoLight);
+        hideVideo(mobileVideoDark);
+
+        if (backgroundVideo) {
+          backgroundVideo.pause();
+          backgroundVideo.classList.add("is-hidden");
         }
 
         document.body.classList.remove("home-intro-active");
