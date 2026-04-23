@@ -10,19 +10,17 @@ showTableOfContents = false
 
 We welcome inquiries from prospective students, post-docs and collaborators.
 
-## Email
 
-Sven Lange, Ph.D.
+### Sven Lange, Ph.D.
 
-links = [
-{ google-scholar = "https://scholar.google.com/citations?user=xookvIMAAAAJ&hl=en&authuser=1" },
-{ orcid = "https://orcid.org/0000-0002-6011-8647" },
-{ github = "https://github.com/sven-lange" },
-{ bluesky = "https://bsky.app/profile/sven-m-lange.bsky.social" }
-]
-
-
-## Location
+[Email]("sven.lange {at} example.edu")
+[params]
+  links = [
+  { google-scholar = "https://scholar.google.com/citations?user=xookvIMAAAAJ&hl=en&authuser=1" },
+  { orcid = "https://orcid.org/0000-0002-6011-8647" },
+  { github = "https://github.com/sven-lange" },
+  { bluesky = "https://bsky.app/profile/sven-m-lange.bsky.social" }
+  ]
 
 Department Name  
 Institution Name  
