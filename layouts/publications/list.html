@@ -22,12 +22,15 @@
               {{ range sort (sort .Pages "Weight" "asc") "Date" "desc" }}
                 {{ $doi := .Params.doi | default "" }}
                 {{ $doiURL := .Params.doiURL | default "" }}
+                {{ $authors := .Params.authorsDisplay | default "" | markdownify }}
+                {{ $authors = replace $authors "*" "<sup>*</sup>" }}
+                {{ $authors = replace $authors "#" "<sup>#</sup>" }}
                 {{ if and (eq $doiURL "") (ne $doi "") }}
                   {{ $doiURL = printf "https://doi.org/%s" $doi }}
                 {{ end }}
 
                 <li class="leading-relaxed text-neutral-800 dark:text-neutral-200">
-                  <span>{{ .Params.authorsDisplay | default "" | markdownify }}</span>
+                  <span>{{ $authors | safeHTML }}</span>
                   <span> </span>
                   {{ if $doiURL }}
                     <a
