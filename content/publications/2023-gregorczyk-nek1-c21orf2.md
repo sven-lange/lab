@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2023
   publicationType = "Journal Article"
-  authorsDisplay = "Mateusz Gregorczyk, Graziana Pastore, Ivan Munoz, Thomas Carroll, Johanna Streubel, Meagan Munro, Pawel Lis, **Sven Lange**, Frederic Lamoliatte, Thomas Macartney, Rachel Toth, Fiona Brown, James Hastie, Gislene Pereira, Daniel Durocher, John Rouse#"
+  authorsDisplay = "Mateusz Gregorczyk, Graziana Pastore, Ivan Munoz, Thomas Carroll, Johanna Streubel, Meagan Munro, Pawel Lis, **Sven M. Lange**, Frederic Lamoliatte, Thomas Macartney, Rachel Toth, Fiona Brown, James Hastie, Gislene Pereira, Daniel Durocher, John Rouse#"
   authorNotes = ""
   journal = "Life Science Alliance"
   doi = "10.26508/lsa.202201740"
