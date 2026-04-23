@@ -19,7 +19,7 @@ We employ a multi-disciplinary strategy combining structural biology, biochemist
 
 ###  Allosteric regulation of ubiquitin binders during tranport events
 
-A recently discovered mechanism establishes how the small GTPase ARL3 allosterically regulates ubiquitin binding by the ciliary adapter CFAP36, thereby controlling the export of damaged proteins from cilia. We will expand on this concept to explore the spatio-temporal control of ubiquitin-dependent transport events in the cell. 
+A recently discovered mechanism establishes [how the small GTPase ARL3 allosterically regulates ubiquitin binding by the ciliary adapter CFAP36](https://doi.org/10.1016/j.cell.2025.07.043), thereby controlling the export of damaged proteins from cilia. We will expand on this concept to explore the spatio-temporal control of ubiquitin-dependent transport events in the cell. 
 
 ### Ubiquitin chains as structural scaffold in transport assemblies
 

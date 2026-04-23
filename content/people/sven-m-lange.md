@@ -23,5 +23,5 @@ featured = "/img/people/Lange_Sven.jpg"
   ]
 +++
 
-Sven leads the lab's research program.
+Sven leads the lab's research program. Sven completed his B.Sc. and M.Sc. in Germany before moving to Scotland for his Ph.D. with [Sir Philip Cohen](https://en.wikipedia.org/wiki/Philip_Cohen_(British_biochemist)) at the MRC Protein Phosphorylation and Ubiquitylation Unit ([MRC PPU](https://www.ppu.mrc.ac.uk/)) in Dundee, where he structurally characterized IRAK pseudokinases. He then joined [Yogesh Kulathu's lab](https://www.kulathulab.org/), also at the MRC PPU, working on branched ubiquitin chains and deubiquitinases. Next, Sven joined [Alan Brown's lab](https://brown.hms.harvard.edu/) as a postdoc in 2022 to determine [how ubiquitinated proteins are retrieved from cilia](https://doi.org/10.1016/j.cell.2025.07.043). He was awarded a Sara Elizabeth O'Brien Trust Postdoc Fellowship in 2023.
 
