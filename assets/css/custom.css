@@ -249,3 +249,7 @@ html.dark .people-member-link {
 .publications-year-list > li + li {
   margin-top: 2rem;
 }
+
+.publications-year-list {
+  font-size: 1rem;
+}
