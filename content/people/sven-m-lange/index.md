@@ -8,6 +8,9 @@ showAuthor = false
 showReadingTime = false
 showTableOfContents = false
 featured = "/img/Lange_Sven.jpg"
+[build]
+  render = "never"
+  list = "local"
 [params]
   role = "Principal Investigator"
   email = "sven.lange@example.edu"

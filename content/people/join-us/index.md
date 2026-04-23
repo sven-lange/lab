@@ -7,6 +7,9 @@ showDate = false
 showAuthor = false
 showReadingTime = false
 showTableOfContents = false
+[build]
+  render = "never"
+  list = "local"
 [params]
   role = "Open Position"
 +++

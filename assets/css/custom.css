@@ -171,3 +171,34 @@ html.dark .dark\:from-neutral-800 {
 html.dark .dark\:to-neutral-800 {
   --tw-gradient-to: #0f172a var(--tw-gradient-to-position) !important;
 }
+
+/* People page single-card layout */
+.people-member-photo {
+  border: 2px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.12);
+}
+
+html.dark .people-member-photo {
+  border-color: rgba(148, 163, 184, 0.25);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.42);
+}
+
+.people-member-photo-fallback {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e3a8a;
+}
+
+html.dark .people-member-photo-fallback {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #cbd5e1;
+}
+
+.people-member-link {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+html.dark .people-member-link {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.55);
+}

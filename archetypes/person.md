@@ -8,6 +8,9 @@ showAuthor = false
 showReadingTime = false
 showTableOfContents = false
 featured = ""
+[build]
+  render = "never"
+  list = "local"
 [params]
   role = ""
   email = ""
