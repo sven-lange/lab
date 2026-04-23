@@ -168,6 +168,9 @@ function executeQuery(term) {
           value.item.externalUrl +
           "</span>"
         : value.item.title;
+      var sectionText = (value.item.section || "").trim();
+      var titleText = (value.item.title || "").trim();
+      var showSection = sectionText && sectionText.toLowerCase() !== titleText.toLowerCase();
       var linkconfig = value.item.externalUrl
         ? 'target="_blank" rel="noopener" href="' + value.item.externalUrl + '"'
         : 'href="' + value.item.permalink + '"';
@@ -180,7 +183,7 @@ function executeQuery(term) {
               <div class="-mb-1 text-lg font-bold">
                 ${title}
               </div>
-              <div class="text-sm text-neutral-500 dark:text-neutral-400">${value.item.section}</div>
+              ${showSection ? `<div class="text-sm text-neutral-500 dark:text-neutral-400">${sectionText}</div>` : ""}
             </div>
             <div class="ml-2 ltr:block rtl:hidden text-neutral-500">&rarr;</div>
             <div class="mr-2 ltr:hidden rtl:block text-neutral-500">&larr;</div>
