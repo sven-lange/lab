@@ -13,7 +13,7 @@ We welcome inquiries from prospective students, post-docs and collaborators.
 
 ### Sven M. Lange, Ph.D.
 
-{{< email email="sven.lange@example.edu" text="Email" >}}
+{{< email email="smlange281@gmail.com" text="Email" >}}
 
 
 Department Name  

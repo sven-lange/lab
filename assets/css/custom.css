@@ -141,6 +141,8 @@ body.home-intro-complete .main-menu {
   --brand-icon-gap-desktop: 0.8rem;
   --people-headshot-size-mobile: 10rem;
   --people-headshot-size-desktop: 12rem;
+  --people-headshot-text-gap-mobile: 1.25rem;
+  --people-headshot-text-gap-desktop: 2.25rem;
 }
 
 .main-menu > div > a.brand-lockup {
@@ -199,7 +201,15 @@ html.dark .dark\:to-neutral-800 {
   box-shadow: 0 8px 24px rgba(2, 6, 23, 0.12);
 }
 
+.people-member-layout {
+  row-gap: var(--people-headshot-text-gap-mobile);
+}
+
 @media (min-width: 640px) {
+  .people-member-layout {
+    column-gap: var(--people-headshot-text-gap-desktop);
+  }
+
   .people-member-photo {
     width: var(--people-headshot-size-desktop);
     height: var(--people-headshot-size-desktop);

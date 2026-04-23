@@ -14,7 +14,7 @@ featured = "/img/people/Lange_Sven.jpg"
 [params]
   status = "current"
   role = "Assistant Professor"
-  email = "sven.lange {at} example.edu"
+  email = "smlange281@gmail.com"
   links = [
   { google-scholar = "https://scholar.google.com/citations?user=xookvIMAAAAJ&hl=en&authuser=1" },
   { orcid = "https://orcid.org/0000-0002-6011-8647" },
