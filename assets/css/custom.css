@@ -13,8 +13,8 @@
 /* Icon size between LANGE and LAB */
 .main-menu > div > a > img.logo,
 .main-menu > div > a > span.logo {
-  max-width: 9rem !important;
-  max-height: 9rem !important;
+  max-width: 12rem !important;
+  max-height: 12rem !important;
 }
 
 /* Top navigation font size (desktop + mobile menu) */

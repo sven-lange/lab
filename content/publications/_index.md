@@ -14,3 +14,8 @@ showSummary = true
 +++
 
 Publications are maintained here.
+
+Use one Markdown file per publication in this folder, named like `year-first-author.md`.
+
+- `params.authorsDisplay` supports Markdown, so lab members can be bolded.
+- `params.authorNotes` is optional for manual symbols (for example, `*` co-first, `#` corresponding).

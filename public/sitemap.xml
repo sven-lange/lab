@@ -38,10 +38,4 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://sven-lange.github.io/lab/publications/2025-test/</loc>
-    <lastmod>2025-09-18T00:00:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>

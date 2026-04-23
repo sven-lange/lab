@@ -1,0 +1,58 @@
+{{ define "main" }}
+  <article class="mx-auto max-w-5xl px-6 py-10">
+    <header class="mb-10">
+      <h1 class="text-4xl font-extrabold text-neutral-900 dark:text-neutral-100">{{ .Title }}</h1>
+      {{ with .Content }}
+        <div class="prose mt-5 max-w-none dark:prose-invert">{{ . }}</div>
+      {{ end }}
+    </header>
+
+    {{ $pubs := where .RegularPages "Draft" "!=" true }}
+    {{ if gt (len $pubs) 0 }}
+      {{ $groups := sort ($pubs.GroupByParam "year") "Key" "desc" }}
+      <div class="space-y-12">
+        {{ range $groups }}
+          <section aria-labelledby="pub-year-{{ .Key }}" class="space-y-5">
+            <div class="flex items-end gap-4">
+              <h2 id="pub-year-{{ .Key }}" class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">{{ .Key }}</h2>
+              <div class="h-px flex-1 bg-neutral-300 dark:bg-neutral-700"></div>
+            </div>
+
+            <ol class="space-y-4">
+              {{ range sort (sort .Pages "Weight" "asc") "Date" "desc" }}
+                {{ $doi := .Params.doi | default "" }}
+                {{ $doiURL := .Params.doiURL | default "" }}
+                {{ if and (eq $doiURL "") (ne $doi "") }}
+                  {{ $doiURL = printf "https://doi.org/%s" $doi }}
+                {{ end }}
+
+                <li class="leading-relaxed text-neutral-800 dark:text-neutral-200">
+                  <span>{{ .Params.authorsDisplay | default "" | markdownify }}</span>
+                  <span> </span>
+                  {{ if $doiURL }}
+                    <a
+                      class="font-medium text-neutral-900 underline decoration-neutral-400 underline-offset-2 hover:text-primary-700 dark:text-neutral-100 dark:decoration-neutral-500 dark:hover:text-primary-400"
+                      href="{{ $doiURL | safeURL }}"
+                      target="_blank"
+                      rel="noopener noreferrer">{{ .Title }}</a><span>.</span>
+                  {{ else }}
+                    <span class="font-medium text-neutral-900 dark:text-neutral-100">{{ .Title }}</span><span>.</span>
+                  {{ end }}
+                  {{ with .Params.journal }}
+                    <span> </span><em>{{ . }}</em>
+                  {{ end }}
+
+                  {{ with .Params.authorNotes }}
+                    <div class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{{ . | markdownify }}</div>
+                  {{ end }}
+                </li>
+              {{ end }}
+            </ol>
+          </section>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="text-neutral-700 dark:text-neutral-300">Publications will be listed here soon.</p>
+    {{ end }}
+  </article>
+{{ end }}

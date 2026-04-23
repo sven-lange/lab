@@ -2,22 +2,16 @@
 date = '{{ .Date }}'
 draft = true
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-summary = ''
 showAuthor = false
-authors = []
-tags = ["publication"]
+showDate = false
+showReadingTime = false
+[build]
+  render = "never"
+  list = "local"
 [params]
-  publicationType = "Journal Article"
-  venue = ""
   year = 2026
+  authorsDisplay = ""
+  authorNotes = "" # optional, for symbols like * co-first, # corresponding
+  journal = ""
   doi = ""
-  paperURL = ""
-  pdfURL = ""
 +++
-
-## Citation
-
-## Links
-
-- [DOI]()
-- [PDF]()
