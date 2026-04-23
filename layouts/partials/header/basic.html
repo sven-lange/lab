@@ -1,6 +1,6 @@
 <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
   <div>
-    <a href="{{ "" | relLangURL }}" class="flex items-center gap-2">
+    <a href="{{ "" | relLangURL }}" class="flex items-center gap-3">
       <span class="sr-only">{{ .Site.Title | markdownify }}</span>
 
       {{ $disableText := .Site.Params.disableTextInHeader | default true }}

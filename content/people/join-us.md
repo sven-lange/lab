@@ -11,6 +11,7 @@ showTableOfContents = false
   render = "never"
   list = "local"
 [params]
+  status = "open"
   role = "Open Position"
 +++
 

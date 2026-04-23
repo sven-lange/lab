@@ -12,6 +12,7 @@ featured = ""
   render = "never"
   list = "local"
 [params]
+  status = "current" # valid values: current, former
   role = ""
   email = ""
   links = []

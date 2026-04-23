@@ -7,15 +7,16 @@ showDate = false
 showAuthor = false
 showReadingTime = false
 showTableOfContents = false
-featured = "/img/Lange_Sven.jpg"
+featured = "/img/people/Lange_Sven.jpg"
 [build]
   render = "never"
   list = "local"
 [params]
-  role = "Principal Investigator"
-  email = "sven.lange@example.edu"
+  status = "current"
+  role = "Assistant Professor"
+  email = "sven.lange {at} example.edu"
   links = [
-    { scholar = "https://scholar.google.com/" },
+    { google-scholar = "https://scholar.google.com/" },
     { orcid = "https://orcid.org/" },
     { github = "https://github.com/" },
     { bluesky = "https://bsky.app/" }
@@ -23,3 +24,4 @@ featured = "/img/Lange_Sven.jpg"
 +++
 
 Sven leads the lab's research program.
+
