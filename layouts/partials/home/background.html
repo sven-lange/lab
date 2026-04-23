@@ -1,22 +1,61 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
-{{ $homeLogoURL := "" }}
-{{ with .Site.Params.homepage.heroLogo }}
+{{ $homeLogoLightURL := "" }}
+{{ $homeLogoDarkURL := "" }}
+{{ with .Site.Params.homepage.heroLogoLight }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-    {{ $homeLogoURL = . }}
+    {{ $homeLogoLightURL = . }}
   {{ else }}
-    {{ $homeLogoURL = . | relURL }}
+    {{ $homeLogoLightURL = . | relURL }}
   {{ end }}
-{{ else }}
+{{ end }}
+{{ with .Site.Params.homepage.heroLogoDark }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ $homeLogoDarkURL = . }}
+  {{ else }}
+    {{ $homeLogoDarkURL = . | relURL }}
+  {{ end }}
+{{ end }}
+{{ if and (eq $homeLogoLightURL "") .Site.Params.homepage.heroLogo }}
+  {{ with .Site.Params.homepage.heroLogo }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $homeLogoLightURL = . }}
+    {{ else }}
+      {{ $homeLogoLightURL = . | relURL }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if and (eq $homeLogoLightURL "") .Site.Params.logoLight }}
+  {{ with .Site.Params.logoLight }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $homeLogoLightURL = . }}
+    {{ else }}
+      {{ $homeLogoLightURL = . | relURL }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if and (eq $homeLogoDarkURL "") .Site.Params.logoDark }}
+  {{ with .Site.Params.logoDark }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $homeLogoDarkURL = . }}
+    {{ else }}
+      {{ $homeLogoDarkURL = . | relURL }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if and (eq $homeLogoLightURL "") .Site.Params.Logo }}
   {{ with .Site.Params.Logo }}
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $homeLogoURL = . }}
+      {{ $homeLogoLightURL = . }}
     {{ else }}
       {{ $homeLogo := resources.Get . }}
       {{ if $homeLogo }}
-        {{ $homeLogoURL = $homeLogo.RelPermalink }}
+        {{ $homeLogoLightURL = $homeLogo.RelPermalink }}
       {{ end }}
     {{ end }}
   {{ end }}
+{{ end }}
+{{ if eq $homeLogoDarkURL "" }}
+  {{ $homeLogoDarkURL = $homeLogoLightURL }}
 {{ end }}
 <article class="prose dark:prose-invert max-w-full">
   <div class="relative">
@@ -161,14 +200,22 @@
               src="{{ $heroBannerImage.RelPermalink }}"
               alt="{{ .Site.Params.homepage.heroBannerAlt | default "Homepage banner" }}">
           {{ end }}
-          {{ if $homeLogoURL }}
+          {{ if or $homeLogoLightURL $homeLogoDarkURL }}
               <div
                 class="pointer-events-none absolute"
                 style="left: 50%; top: 50%; z-index: 30; transform: translate(-50%, -170%);">
-              <img
-                class="home-hero-logo nozoom h-auto w-auto object-contain"
-                src="{{ $homeLogoURL }}"
-                alt="Lab logo">
+              {{ if $homeLogoLightURL }}
+                <img
+                  class="home-hero-logo nozoom h-auto w-auto object-contain dark:hidden"
+                  src="{{ $homeLogoLightURL }}"
+                  alt="Lab logo">
+              {{ end }}
+              {{ if $homeLogoDarkURL }}
+                <img
+                  class="home-hero-logo nozoom hidden h-auto w-auto object-contain dark:block"
+                  src="{{ $homeLogoDarkURL }}"
+                  alt="Lab logo">
+              {{ end }}
             </div>
           {{ end }}
             <h1

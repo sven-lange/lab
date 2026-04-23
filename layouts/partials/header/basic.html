@@ -7,11 +7,27 @@
       {{ $titleParts := split (.Site.Title | plainify) " " }}
       {{ $leftTitle := "" }}
       {{ $rightTitle := "" }}
+      {{ $logoLightURL := "" }}
+      {{ $logoDarkURL := "" }}
       {{ if gt (len $titleParts) 0 }}
         {{ $leftTitle = index $titleParts 0 }}
       {{ end }}
       {{ if gt (len $titleParts) 1 }}
         {{ $rightTitle = delimit (after 1 $titleParts) " " }}
+      {{ end }}
+      {{ with .Site.Params.logoLight }}
+        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+          {{ $logoLightURL = . }}
+        {{ else }}
+          {{ $logoLightURL = . | relURL }}
+        {{ end }}
+      {{ end }}
+      {{ with .Site.Params.logoDark }}
+        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+          {{ $logoDarkURL = . }}
+        {{ else }}
+          {{ $logoDarkURL = . | relURL }}
+        {{ end }}
       {{ end }}
 
       {{ if and (not $disableText) (ne $leftTitle "") }}
@@ -20,7 +36,20 @@
         </span>
       {{ end }}
 
-      {{ if .Site.Params.Logo }}
+      {{ if or $logoLightURL $logoDarkURL }}
+        {{ if $logoLightURL }}
+          <img
+            src="{{ $logoLightURL }}"
+            class="logo max-h-20 max-w-20 object-scale-down object-left nozoom dark:hidden"
+            alt="">
+        {{ end }}
+        {{ if $logoDarkURL }}
+          <img
+            src="{{ $logoDarkURL }}"
+            class="logo max-h-20 max-w-20 object-scale-down object-left nozoom hidden dark:block"
+            alt="">
+        {{ end }}
+      {{ else if .Site.Params.Logo }}
         {{ $logo := resources.Get .Site.Params.Logo }}
         {{ if $logo }}
           {{ if eq $logo.MediaType.SubType "svg" }}
@@ -64,7 +93,7 @@
 
 {{ if .Site.Menus.subnavigation }}
   <div
-    class="main-menu flex pb-3 flex-col items-end justify-between md:justify-start space-x-3 {{ if .Site.Params.Logo }}
+    class="main-menu flex pb-3 flex-col items-end justify-between md:justify-start space-x-3 {{ if or .Site.Params.Logo .Site.Params.logoLight .Site.Params.logoDark }}
       -mt-[15px]
     {{ end }}">
     <div class="hidden md:flex items-center space-x-5">

@@ -55,6 +55,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
   homepageImage = "img/lab-background.gif" # used in: hero, card, and background
+  heroLogoLight = "android-chrome-512x512_b.png"
+  heroLogoDark = "android-chrome-512x512_w.png"
   heroLogo = "android-chrome-192x192.png" # high-resolution logo shown above homepage title
   heroBannerImage = "" # optional static banner shown above the homepage title
   heroBannerAlt = "" # optional alt text for the homepage banner image
