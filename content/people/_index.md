@@ -14,7 +14,6 @@ cardView = false
 	showReadingTime = false
 +++
 
-## Current Members
 
 The lab is currently in its launch phase.
 

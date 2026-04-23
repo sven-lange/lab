@@ -135,6 +135,24 @@ body.home-intro-complete .main-menu {
   letter-spacing: 0.14em;
 }
 
+/* Easy tuning knobs for header/logo spacing and people headshots */
+:root {
+  --brand-icon-gap-mobile: 1.9rem;
+  --brand-icon-gap-desktop: 2.2rem;
+  --people-headshot-size-mobile: 3.5rem;
+  --people-headshot-size-desktop: 4rem;
+}
+
+.main-menu > div > a.brand-lockup {
+  column-gap: var(--brand-icon-gap-mobile) !important;
+}
+
+@media (min-width: 768px) {
+  .main-menu > div > a.brand-lockup {
+    column-gap: var(--brand-icon-gap-desktop) !important;
+  }
+}
+
 .main-menu nav a > span,
 .main-menu > a {
   font-size: 1.1rem !important;
@@ -175,8 +193,17 @@ html.dark .dark\:to-neutral-800 {
 
 /* People page single-card layout */
 .people-member-photo {
+  width: var(--people-headshot-size-mobile);
+  height: var(--people-headshot-size-mobile);
   border: 2px solid rgba(15, 23, 42, 0.12);
   box-shadow: 0 8px 24px rgba(2, 6, 23, 0.12);
+}
+
+@media (min-width: 640px) {
+  .people-member-photo {
+    width: var(--people-headshot-size-desktop);
+    height: var(--people-headshot-size-desktop);
+  }
 }
 
 html.dark .people-member-photo {
