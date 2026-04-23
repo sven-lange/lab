@@ -13,4 +13,4 @@ showSummary = true
 	showReadingTime = false
 +++
 
-^\*^ equal contribution, ^\#^ corresponding author
+\* equal contribution, \# corresponding author
