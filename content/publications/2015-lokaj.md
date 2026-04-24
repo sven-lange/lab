@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2015
   publicationType = "Journal Article"
-  authorsDisplay = "Mandy Lokaj, Stefanie K. Koesling, Carolin Koerner, **[Sven M. Lange](../people/#sven-m-lange)**, Sylvia E.C. Van Beersum, Jeroen Van Reeuwijk, Ronald Roepman, Nicola Horn, Marius Ueffing, Karsten Boldt, Alfred Wittinghofer#"
+  authorsDisplay = "Mandy Lokaj, Stefanie K. Koesling, Carolin Koerner, **[**Sven M. Lange**](../people/#sven-m-lange)**, Sylvia E.C. Van Beersum, Jeroen Van Reeuwijk, Ronald Roepman, Nicola Horn, Marius Ueffing, Karsten Boldt, Alfred Wittinghofer#"
   authorNotes = ""
   journal = "Structure"
   doi = "10.1016/j.str.2015.08.016"
