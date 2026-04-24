@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2022
   publicationType = "Journal Article"
-  authorsDisplay = "David Millrine*, Thomas Cummings*, Stephen P. Matthews*, Joshua J. Peter, Helge M. Magnussen, **[Sven M. Lange](https://sven-lange.github.io/lab/people/sven-m-lange/)**, Thomas Macartney, Frederic Lamoliatte, Axel Knebel, Yogesh Kulathu#"
+  authorsDisplay = "David Millrine*, Thomas Cummings*, Stephen P. Matthews*, Joshua J. Peter, Helge M. Magnussen, **[Sven M. Lange](../people/#sven-m-lange)**, Thomas Macartney, Frederic Lamoliatte, Axel Knebel, Yogesh Kulathu#"
   authorNotes = ""
   journal = "Cell Reports"
   doi = "10.1016/j.celrep.2022.111168"

@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2021
   publicationType = "Journal Article"
-  authorsDisplay = "Syed Arif Abdul Rehman*#, Lee A. Armstrong*, **[Sven M. Lange](https://sven-lange.github.io/lab/people/sven-m-lange/)**, Yosua Adi Kristariyanto, Tobias W. Graewert, Axel Knebel, Dmitri I. Svergun, Yogesh Kulathu#"
+  authorsDisplay = "Syed Arif Abdul Rehman*#, Lee A. Armstrong*, **[Sven M. Lange](../people/#sven-m-lange)**, Yosua Adi Kristariyanto, Tobias W. Graewert, Axel Knebel, Dmitri I. Svergun, Yogesh Kulathu#"
   authorNotes = ""
   journal = "Molecular Cell"
   doi = "10.1016/j.molcel.2021.08.024"

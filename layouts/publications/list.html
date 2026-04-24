@@ -24,8 +24,10 @@
                 {{ $doiURL := .Params.doiURL | default "" }}
                 {{ $authorsRaw := .Params.authorsDisplay | default "" }}
                 {{ $authors := .RenderString (dict "display" "inline") $authorsRaw }}
-                {{ $authors = replace $authors "*" "<sup>*</sup>" }}
-                {{ $authors = replace $authors "#" "<sup>#</sup>" }}
+                {{ $authors = replaceRE `\*([^A-Za-z0-9])` "<sup>*</sup>$1" $authors }}
+                {{ $authors = replaceRE `#([^A-Za-z0-9])` "<sup>#</sup>$1" $authors }}
+                {{ $authors = replaceRE `\*$` "<sup>*</sup>" $authors }}
+                {{ $authors = replaceRE `#$` "<sup>#</sup>" $authors }}
                 {{ if and (eq $doiURL "") (ne $doi "") }}
                   {{ $doiURL = printf "https://doi.org/%s" $doi }}
                 {{ end }}
@@ -35,7 +37,7 @@
                   <span> </span>
                   {{ if $doiURL }}
                     <a
-                      class="font-medium text-neutral-900 underline decoration-neutral-400 underline-offset-2 hover:text-primary-700 dark:text-neutral-100 dark:decoration-neutral-500 dark:hover:text-primary-400"
+                      class="font-medium"
                       href="{{ $doiURL | safeURL }}"
                       target="_blank"
                       rel="noopener noreferrer">{{ .Title }}</a><span>.</span>
