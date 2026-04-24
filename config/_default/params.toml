@@ -74,6 +74,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   introAnimationMuted = true
   introAnimationLoop = true
   introAnimationPlaysInline = true
+  introAnimationEndHoldMs = 2000
   introAnimationScrollThreshold = 64
   menuRevealOnScroll = true
   showRecent = false

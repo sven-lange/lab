@@ -13,9 +13,9 @@ cardView = false
 
 ### Mechanisms of Ubiquitin-Mediated Transport
 
-The [ubiquitin]() system represents one of biology's most sophisticated regulatory networks, controlling virtually every cellular process through the formation of diverse chain architectures that are decoded by ubiquitin- binding domains with remarkable specificity. While the degradative functions of ubiquitination are well-established, we are only beginning to understand how this system orchestrates the complex trafficking events that maintain cellular organization and respond to environmental challenges. The Lange Lab's research program will address fundamental gaps in our understanding of how ubiquitin signals are interpreted to control intracellular transport.
+The ubiquitin system represents one of biology's most sophisticated regulatory networks, controlling virtually every cellular process through the formation of diverse chain architectures that are decoded by ubiquitin- binding domains with remarkable specificity. While the degradative functions of ubiquitination are well-established, we are only beginning to understand how this system orchestrates the complex trafficking events that maintain cellular organization and respond to environmental challenges. The Lange Lab's research program will address fundamental gaps in our understanding of [how ubiquitin signals are interpreted to control intracellular transport]().
 
-We employ a multi-disciplinary strategy combining structural biology, biochemistry, bioinformatics, optical microscopy and proteomic approaches to investigate ubiquitin-mediated transport mechanisms across all scales of a cell.
+We employ a multi-disciplinary strategy combining structural biology, biochemistry, bioinformatics, optical microscopy and proteomics approaches to investigate ubiquitin-mediated transport mechanisms across all scales of a cell.
 
 ###  Allosteric regulation of ubiquitin binders during tranport events
 
