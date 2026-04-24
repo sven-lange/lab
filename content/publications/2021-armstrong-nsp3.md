@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2021
   publicationType = "Journal Article"
-  authorsDisplay = "Lee A. Armstrong*, **Sven M. Lange***, Virginia Dee Cesare, Stephen P. Matthews, Raja Sekhar Nirujogi, Isobel Cole, Anthony Hope, Fraser Cunningham, Rachel Toth, Rukmini Mukherjee, Denisa Bojkova, Franz Gruber, David Gray, Paul G. Wyatt, Jindrich Cinatl, Ivan Dikic, Paul Davies, Yogesh Kulathu#"
+  authorsDisplay = "Lee A. Armstrong*, **[Sven M. Lange](https://sven-lange.github.io/lab/people/sven-m-lange/)***, Virginia Dee Cesare, Stephen P. Matthews, Raja Sekhar Nirujogi, Isobel Cole, Anthony Hope, Fraser Cunningham, Rachel Toth, Rukmini Mukherjee, Denisa Bojkova, Franz Gruber, David Gray, Paul G. Wyatt, Jindrich Cinatl, Ivan Dikic, Paul Davies, Yogesh Kulathu#"
   authorNotes = ""
   journal = "PLOS ONE"
   doi = "10.1371/JOURNAL.PONE.0253364"

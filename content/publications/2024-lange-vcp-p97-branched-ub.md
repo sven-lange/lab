@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2024
   publicationType = "Journal Article"
-  authorsDisplay = "**Sven M. Lange**#, Matthew R. McFarland, Frederic Lamoliatte, Thomas Carroll, Logesvaran Krshnan, Anna Perez-Rafols, Dominika Kwasna, Linnan Shen, Iona Wallace, Isobel Cole, Lee A. Armstrong, Axel Knebel, Clare Johnson, Virginia De Cesare, Yogesh Kulathu#"
+  authorsDisplay = "**[Sven M. Lange](https://sven-lange.github.io/lab/people/sven-m-lange/)**#, Matthew R. McFarland, Frederic Lamoliatte, Thomas Carroll, Logesvaran Krshnan, Anna Perez-Rafols, Dominika Kwasna, Linnan Shen, Iona Wallace, Isobel Cole, Lee A. Armstrong, Axel Knebel, Clare Johnson, Virginia De Cesare, Yogesh Kulathu#"
   authorNotes = ""
   journal = "Nature Structural & Molecular Biology"
   doi = "10.1038/s41594-024-01354-y"

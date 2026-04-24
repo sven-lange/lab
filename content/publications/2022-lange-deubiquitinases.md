@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2022
   publicationType = "Journal Article"
-  authorsDisplay = "**Sven M. Lange**, Lee A. Armstrong, Yogesh Kulathu#"
+  authorsDisplay = "**[Sven M. Lange](https://sven-lange.github.io/lab/people/sven-m-lange/)**, Lee A. Armstrong, Yogesh Kulathu#"
   authorNotes = ""
   journal = "Molecular Cell"
   doi = "10.1016/j.molcel.2021.10.027"

@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2024
   publicationType = "Journal Article"
-  authorsDisplay = "Olawale G. Raimi*, Hina Ojha*, Kenneth Ehses, Verena Dederer, **Sven M. Lange**, Cristian Polo Rivera, Tom D. Deegan, Yinchen Chen, Melanie Wightman, Rachel Toth, Karim P. M. Labib, Sebastian Mathea, Neil Ranson, Ruben Fernandez-Busnadiego, Miratul M. K. Muqit#"
+  authorsDisplay = "Olawale G. Raimi*, Hina Ojha*, Kenneth Ehses, Verena Dederer, **[Sven M. Lange](https://sven-lange.github.io/lab/people/sven-m-lange/)**, Cristian Polo Rivera, Tom D. Deegan, Yinchen Chen, Melanie Wightman, Rachel Toth, Karim P. M. Labib, Sebastian Mathea, Neil Ranson, Ruben Fernandez-Busnadiego, Miratul M. K. Muqit#"
   authorNotes = ""
   journal = "Science Advances"
   doi = "10.1126/sciadv.adn7191"

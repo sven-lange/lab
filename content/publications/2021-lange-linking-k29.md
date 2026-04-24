@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2021
   publicationType = "Journal Article"
-  authorsDisplay = "**Sven M. Lange**, Yogesh Kulathu#"
+  authorsDisplay = "**[Sven M. Lange](https://sven-lange.github.io/lab/people/sven-m-lange/)**, Yogesh Kulathu#"
   authorNotes = ""
   journal = "Nature Chemical Biology"
   doi = "10.1038/s41589-021-00833-3"

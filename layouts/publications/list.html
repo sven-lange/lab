@@ -22,7 +22,8 @@
               {{ range sort (sort .Pages "Weight" "asc") "Date" "desc" }}
                 {{ $doi := .Params.doi | default "" }}
                 {{ $doiURL := .Params.doiURL | default "" }}
-                {{ $authors := .Params.authorsDisplay | default "" | markdownify }}
+                {{ $authorsRaw := .Params.authorsDisplay | default "" }}
+                {{ $authors := .RenderString (dict "display" "inline") $authorsRaw }}
                 {{ $authors = replace $authors "*" "<sup>*</sup>" }}
                 {{ $authors = replace $authors "#" "<sup>#</sup>" }}
                 {{ if and (eq $doiURL "") (ne $doi "") }}
