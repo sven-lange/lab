@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2020
   publicationType = "Journal Article"
-  authorsDisplay = "**[Sven M. Lange](../people/#sven-m-lange)**, Marina I. Nelen, Philip Cohen#, Yogesh Kulathu#"
+  authorsDisplay = "[**Sven M. Lange**](../people/#sven-m-lange), Marina I. Nelen, Philip Cohen#, Yogesh Kulathu#"
   authorNotes = ""
   journal = "Structure"
   doi = "10.1016/j.str.2020.11.004"

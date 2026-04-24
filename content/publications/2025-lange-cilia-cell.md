@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2025
   publicationType = "Journal Article"
-  authorsDisplay = "**[Sven M. Lange](../people/#sven-m-lange)**, Jeremy A. Bennett, Robyn J. Eisert, Alan Brown#"
+  authorsDisplay = "[**Sven M. Lange**](../people/#sven-m-lange), Jeremy A. Bennett, Robyn J. Eisert, Alan Brown#"
   authorNotes = ""
   journal = "Cell"
   doi = "10.1016/j.cell.2025.07.043"

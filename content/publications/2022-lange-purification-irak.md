@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2022
   publicationType = "Book Chapter"
-  authorsDisplay = "**[Sven M. Lange](../people/#sven-m-lange)**#, Yogesh Kulathu"
+  authorsDisplay = "[**Sven M. Lange#**](../people/#sven-m-lange), Yogesh Kulathu"
   authorNotes = ""
   journal = "Methods in Enzymology"
   doi = "10.1016/bs.mie.2022.03.026"

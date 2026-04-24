@@ -12,7 +12,7 @@ summary = ""
 [params]
   year = 2022
   publicationType = "Journal Article"
-  authorsDisplay = "Alexia F. Kalogeropulou*, Elena Purlyte*, Francesca Tonelli*, **[Sven M. Lange](../people/#sven-m-lange)**, Melanie Wightman, Alan R. Prescott, Shalini Padmanabhan, Esther Sammler, Dario R. Alessi#"
+  authorsDisplay = "Alexia F. Kalogeropulou*, Elena Purlyte*, Francesca Tonelli*, [**Sven M. Lange**](../people/#sven-m-lange), Melanie Wightman, Alan R. Prescott, Shalini Padmanabhan, Esther Sammler, Dario R. Alessi#"
   authorNotes = ""
   journal = "The Biochemical Journal"
   doi = "10.1042/BCJ20220161"
