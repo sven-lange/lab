@@ -21,6 +21,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://sven-lange.github.io/lab/research/</loc>
+    <lastmod>2026-04-16T18:10:00-04:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://sven-lange.github.io/lab/people/</loc>
     <lastmod>2026-04-16T18:10:00-04:00</lastmod>
     <changefreq>daily</changefreq>
@@ -28,12 +34,6 @@
   </url>
   <url>
     <loc>https://sven-lange.github.io/lab/publications/</loc>
-    <lastmod>2026-04-16T18:10:00-04:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://sven-lange.github.io/lab/research/</loc>
     <lastmod>2026-04-16T18:10:00-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
