@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sven-lange.github.io/lab/sitemap.xml
+Sitemap: https://www.sven-lange.xyz/sitemap.xml

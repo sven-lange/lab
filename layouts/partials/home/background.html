@@ -324,12 +324,18 @@
         window.removeEventListener("touchmove", onTouchMove);
         if (backgroundVideo) {
           backgroundVideo.removeEventListener("ended", onVideoEnded);
+          backgroundVideo.removeEventListener("click", onVideoClick);
         }
         if (mobileVideoLight) {
           mobileVideoLight.removeEventListener("ended", onVideoEnded);
+          mobileVideoLight.removeEventListener("click", onVideoClick);
         }
         if (mobileVideoDark) {
           mobileVideoDark.removeEventListener("ended", onVideoEnded);
+          mobileVideoDark.removeEventListener("click", onVideoClick);
+        }
+        if (fallbackImage) {
+          fallbackImage.removeEventListener("click", onVideoClick);
         }
         if (mobileMenuToggle) {
           mobileMenuToggle.removeEventListener("change", onMobileMenuToggle);
@@ -386,6 +392,10 @@
         completeIntro();
       }
 
+      function onVideoClick() {
+        completeIntro();
+      }
+
       function onVideoEnded() {
         if (window.scrollY <= 0) {
           if (endHoldTimer) return;
@@ -414,6 +424,19 @@
       } else if (backgroundVideo) {
         backgroundVideo.loop = false;
         backgroundVideo.addEventListener("ended", onVideoEnded);
+      }
+
+      if (backgroundVideo) {
+        backgroundVideo.addEventListener("click", onVideoClick);
+      }
+      if (mobileVideoLight) {
+        mobileVideoLight.addEventListener("click", onVideoClick);
+      }
+      if (mobileVideoDark) {
+        mobileVideoDark.addEventListener("click", onVideoClick);
+      }
+      if (fallbackImage) {
+        fallbackImage.addEventListener("click", onVideoClick);
       }
 
       window.addEventListener("scroll", onScroll, { passive: true });
