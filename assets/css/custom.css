@@ -171,7 +171,7 @@ body.home-intro-complete .main-menu {
 
 /* Elegant dark mode palette override (cool slate tone) */
 html.dark body {
-  background-color: #0f172a !important;
+  background-color: #10172a !important;
   color: #e5e7eb;
 }
 
@@ -180,17 +180,17 @@ html.dark .dark\:bg-neutral-900,
 html.dark .dark\:bg-neutral-900\/99,
 html.dark .dark\:bg-neutral-800\/60,
 html.dark .dark\:bg-neutral-100\/75 {
-  background-color: #0f172a !important;
+  background-color: #10172a !important;
 }
 
 html.dark .dark\:from-neutral-800 {
-  --tw-gradient-from: #0f172a var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-from: #10172a var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(16 23 42 / 0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
 
 html.dark .dark\:to-neutral-800 {
-  --tw-gradient-to: #0f172a var(--tw-gradient-to-position) !important;
+  --tw-gradient-to: #10172a var(--tw-gradient-to-position) !important;
 }
 
 /* People page single-card layout */
