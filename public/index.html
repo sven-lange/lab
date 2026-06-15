@@ -946,6 +946,7 @@
         window.removeEventListener("scroll", onScroll);
         window.removeEventListener("wheel", onWheel);
         window.removeEventListener("touchmove", onTouchMove);
+        window.removeEventListener("pointerdown", onPointerDown, true);
         if (backgroundVideo) {
           backgroundVideo.removeEventListener("ended", onVideoEnded);
           backgroundVideo.removeEventListener("click", onVideoClick);
@@ -1020,6 +1021,13 @@
         completeIntro();
       }
 
+      function onPointerDown(event) {
+        if (completed) return;
+        if (!overlay || overlay.classList.contains("is-hidden")) return;
+        if (event && event.pointerType === "mouse" && event.button !== 0) return;
+        completeIntro();
+      }
+
       function onVideoEnded() {
         if (window.scrollY <= 0) {
           if (endHoldTimer) return;
@@ -1066,6 +1074,7 @@
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("wheel", onWheel, { passive: true });
       window.addEventListener("touchmove", onTouchMove, { passive: true });
+      window.addEventListener("pointerdown", onPointerDown, true);
       if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener("change", onMobileMenuToggle);
       }
