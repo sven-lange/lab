@@ -13,13 +13,16 @@ Thank you for your interest in joining the lab.
 
 We are [always interested in motivated and talented people, even if there is currently no position advertised]().
 
+<br> <br> 
+
 ### Graduate Students
 
-If you are a graduate student please reach out to {{< email email="smlange281@gmail.com" text="Dr Sven Lange" >}} directly.
+If you are a graduate student please reach out to {{< email email="sml4006@med.cornell.edu" text="Dr Sven Lange" >}} directly.
+
 
 ### Postdoctoral Fellows
 
-Applicants must have a Ph.D. in cell biology, biochemistry, biophysics, or a related field. Please send a cover letter, CV, and the contact information of two referees to {{< email email="smlange281@gmail.com" text="Dr Sven Lange" >}}.
+Applicants must have a Ph.D. in cell biology, biochemistry, biophysics, or a related field. Please send a cover letter, CV, and the contact information of two referees to {{< email email="sml4006@med.cornell.edu" text="Dr Sven Lange" >}}.
 
 ### Current Openings
 
