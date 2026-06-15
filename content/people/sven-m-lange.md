@@ -13,8 +13,8 @@ featured = "/img/people/Lange_Sven.jpg"
   list = "local"
 [params]
   status = "current"
-  role = "Assistant Professor"
-  email = "smlange281@gmail.com"
+  role = "Principal Investigator"
+  email = "sml4006@med.cornell.edu"
   links = [
   { google-scholar = "https://scholar.google.com/citations?user=xookvIMAAAAJ&hl=en&authuser=1" },
   { orcid = "https://orcid.org/0000-0002-6011-8647" },
