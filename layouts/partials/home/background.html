@@ -122,7 +122,7 @@
             {{ end }}
           {{ end }}
           {{ if $introAnimationVideo }}
-            <div class="fixed inset-0 bg-neutral-100 dark:bg-neutral-800"></div>
+            <div class="fixed inset-0 bg-neutral dark:bg-neutral-800"></div>
             <video
               id="home-background-video"
               class="nozoom fixed inset-0 h-screen w-full object-cover"
@@ -172,7 +172,7 @@
               role="presentation"
               {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
             <div class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
-            <div class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-neutral-100 opacity-60 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800"></div>
+            <div class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-neutral opacity-60 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800"></div>
           {{ end }}
         </div>
 
@@ -239,7 +239,7 @@
 {{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
   <div
     id="background-blur"
-    class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-xl bg-neutral-100/75 dark:bg-neutral-800/60"></div>
+    class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-xl bg-neutral/75 dark:bg-neutral-800/60"></div>
   {{ $backgroundBlur := resources.Get "js/background-blur.js" }}
   {{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script
