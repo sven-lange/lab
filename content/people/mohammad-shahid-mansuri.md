@@ -3,6 +3,7 @@ title = 'Mohammad "Shahid" Mansuri, Ph.D.'
 date = '2026-04-16T18:10:00-04:00'
 draft = false
 summary = "Senior Research Associate"
+weight = 2
 showDate = false
 showAuthor = false
 showReadingTime = false
