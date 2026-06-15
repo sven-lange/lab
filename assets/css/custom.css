@@ -170,9 +170,27 @@ body.home-intro-complete .main-menu {
 }
 
 /* Elegant dark mode palette override (cool slate tone) */
+/* Landing page title color */
+.home-landing-title {
+  color: #3e4554;
+}
+
+html.dark .home-landing-title {
+  color: rgb(var(--color-neutral)) !important;
+}
+
 html.dark body {
   background-color: #10172a !important;
-  color: #e5e7eb;
+  color: rgb(var(--color-neutral)) !important;
+}
+
+html.dark .main-menu > div > a > span:not(.sr-only):not(.logo),
+html.dark .main-menu nav a > span,
+html.dark .main-menu > a,
+html.dark .main-menu button,
+html.dark .main-menu label,
+html.dark .main-menu .bf-icon-color-hover {
+  color: rgb(var(--color-neutral)) !important;
 }
 
 html.dark .dark\:bg-neutral-800,
