@@ -19,8 +19,9 @@ Assistant Professor
 
 {{< email email="sml4006@med.cornell.edu" text="Email" >}}
 
+[![Weill Cornell Biochemistry & Biophysics Logo]("public/img/WCM_BnB_logo.png")]
 
-[Department of Biochemistry & Biophysics](https://biochem.weill.cornell.edu/)
-Weill Cornell Medicine  
-1300 York Avenue
+[Department of Biochemistry & Biophysics](https://biochem.weill.cornell.edu/) <br> 
+Weill Cornell Medicine <br> 
+1300 York Avenue <br> 
 New York, NY
