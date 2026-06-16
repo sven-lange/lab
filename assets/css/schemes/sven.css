@@ -1,6 +1,6 @@
 /* Sven scheme (based on Fire) */
 :root {
-  --color-neutral: 239, 231, 212;
+  --color-neutral: 239, 230, 211;
   /* Stone */
   --color-neutral-50: 250, 250, 249;
   --color-neutral-100: 245, 245, 244;
@@ -9,18 +9,18 @@
   --color-neutral-400: 168, 162, 158;
   --color-neutral-500: 120, 113, 108;
   --color-neutral-600: 87, 83, 78;
-  --color-neutral-700: 68, 64, 60;
-  --color-neutral-800: 16, 23, 42;
-  --color-neutral-900: 28, 25, 23;
+  --color-neutral-700: 56, 56, 56;
+  --color-neutral-800: 38, 38, 38;
+  --color-neutral-900: 38, 38, 38;
   /* Orange */
   --color-primary-50: 255, 247, 237;
   --color-primary-100: 255, 237, 213;
   --color-primary-200: 254, 215, 170;
-  --color-primary-300: 253, 186, 116;
-  --color-primary-400: 251, 146, 60;
-  --color-primary-500: 249, 115, 22;
-  --color-primary-600: 234, 88, 12;
-  --color-primary-700: 194, 65, 12;
+  --color-primary-300: 255, 212, 107;
+  --color-primary-400: 253, 183, 20;
+  --color-primary-500: 247, 133, 28;
+  --color-primary-600: 241, 90, 36;
+  --color-primary-700: 205, 73, 30;
   --color-primary-800: 154, 52, 18;
   --color-primary-900: 124, 45, 18;
   /* Rose */
