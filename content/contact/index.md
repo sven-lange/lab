@@ -17,7 +17,10 @@ We welcome inquiries from prospective students, post-docs and collaborators.
 
 ### Sven M. Lange, Ph.D.
 Assistant Professor <br> <br> 
-
+Department of Biochemistry & Biophysics <br> 
+Weill Cornell Medicine <br> 
+1300 York Avenue <br> 
+New York, NY 10065 <br> 
 <div class="mt-1 flex flex-wrap items-center gap-3 text-neutral-500 dark:text-neutral-400">
   <a
     href="mailto:sml4006@med.cornell.edu"
@@ -38,16 +41,10 @@ Assistant Professor <br> <br>
   </a>
 </div>
 
-<br>
+<br><br> 
 
-Department of Biochemistry & Biophysics <br> 
-Weill Cornell Medicine <br> 
-1300 York Avenue <br> 
-New York, NY 10065 <br> <br> 
 
-{{< email email="sml4006@med.cornell.edu" text="sml4006 at med.cornell.edu" >}}
 
-<br> <br> 
 
 <a href="https://biochem.weill.cornell.edu/">
   <img src="/img/WCM_BnB_logo.png"
