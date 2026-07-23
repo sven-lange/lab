@@ -21,7 +21,7 @@
 .main-menu nav a > span,
 .main-menu > a {
   font-size: 1.3rem !important;
-  line-height: 1.5;
+  line-height: 1.5; 
 }
 
 /* Slightly larger menu text on wide screens */
@@ -358,7 +358,8 @@ html.dark .publication-card strong {
 .publication-card,
 .contact-card,
 .position-card,
-.people-member {
+.people-member,
+.news-card {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
@@ -367,7 +368,8 @@ html.dark .publication-card,
 html.dark .contact-card,
 html.dark .position-card,
 html.dark .people-member,
-html.dark .photo-item {
+html.dark .photo-item,
+html.dark .news-card {
   box-shadow: 0 1px 3px 0 rgb(255 255 255 / 0.05), 0 1px 2px -1px rgb(255 255 255 / 0.05);
 }
 
@@ -387,4 +389,30 @@ html.dark .photo-item {
 
 html.dark .photo-item:hover {
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Scroll indicator arrow */
+.scroll-indicator {
+  animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+body.home-intro-active .scroll-indicator {
+  opacity: 0 !important;
+  animation: none;
+}
+
+body.home-intro-complete .scroll-indicator,
+body:not(.home-intro-active) .scroll-indicator {
+  opacity: 1;
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator {
+    animation: none;
+  }
 }

@@ -79,3 +79,7 @@ COLOR_CHANGE_MAP.md
 *.bak
 *.old
 *.orig
+
+# Large video files (to be integrated via Git LFS later)
+assets/img/animations/231177_medium_pixabay_NYC_skyline.mp4
+assets/img/animations/332900_medium_pixabay_NYC_street.mp4

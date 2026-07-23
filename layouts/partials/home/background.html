@@ -224,6 +224,14 @@
               style="left: 50%; top: 50%; z-index: 10; width: 100%; transform: translate(-50%, -50%);">
             {{ .Title | emojify }}
           </h1>
+          <div
+            id="scroll-arrow"
+            class="scroll-indicator fixed opacity-0 transition-opacity duration-500"
+            style="left: 50%; bottom: 2rem; z-index: 50; transform: translateX(-50%);">
+            <svg class="h-6 w-6 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -462,3 +470,20 @@
     })();
   </script>
 {{ end }}
+<script>
+(function () {
+  var arrow = document.getElementById("scroll-arrow");
+  if (!arrow) return;
+  var news = document.getElementById("news");
+  if (!news) return;
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        arrow.style.opacity = "0";
+        arrow.style.pointerEvents = "none";
+      }
+    });
+  }, { threshold: 0.1 });
+  observer.observe(news);
+})();
+</script>
