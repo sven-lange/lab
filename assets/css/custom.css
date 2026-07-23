@@ -303,25 +303,40 @@ html.dark .email-link.m-1.rounded:hover {
 }
 
 /* Publications links should match the site's primary link styling */
-.publications-year-list a,
-.publications-year-list a:visited {
+.publication-card a,
+.publication-card a:visited {
   color: rgb(var(--color-primary-600));
   text-decoration: none;
   text-decoration-color: rgb(var(--color-primary-300));
   font-weight: 500;
 }
 
-.publications-year-list a:hover {
+.publication-card a:hover {
   color: rgb(var(--color-primary-700));
   text-decoration: underline;
   text-underline-offset: 0.14em;
 }
 
-html.dark .publications-year-list a,
-html.dark .publications-year-list a:visited {
+html.dark .publication-card a,
+html.dark .publication-card a:visited {
   color: rgb(var(--color-primary-400));
 }
 
-html.dark .publications-year-list a:hover {
+html.dark .publication-card a:hover {
   color: rgb(var(--color-primary-300));
+}
+
+/* Contact page link styling */
+.contact-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.contact-card {
+  max-width: 32rem;
 }
