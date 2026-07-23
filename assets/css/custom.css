@@ -71,11 +71,18 @@
 }
 
 .home-hero-logo {
-  width: min(26vw, 210px);
-  max-width: 39vw;
+  width: min(40vw, 210px);
+  max-width: 50vw;
   opacity: 0;
   transform: translateY(1rem);
   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+@media (min-width: 768px) {
+  .home-hero-logo {
+    width: min(26vw, 210px);
+    max-width: 39vw;
+  }
 }
 
 body.home-intro-complete .home-hero-logo,
