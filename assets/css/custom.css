@@ -100,11 +100,14 @@ body.home-intro-complete .main-menu {
 body.home-intro-active .main-menu {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
-body.home-intro-complete .main-menu {
+body.home-intro-complete .main-menu,
+body:not(.home-intro-active) .main-menu {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 @media (min-width: 768px) {
