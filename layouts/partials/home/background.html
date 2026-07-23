@@ -194,43 +194,37 @@
           </div>
         {{ end }}
 
-        <div class="relative h-[600px] sm:h-[800px] md:h-[1000px] px-6 py-10 text-center">
+        <div class="relative h-screen px-6 text-center flex items-center justify-center">
           {{ if $heroBannerImage }}
             <img
-              class="mb-6 h-auto max-h-28 w-auto max-w-full object-contain"
+              class="absolute top-6 left-1/2 -translate-x-1/2 mb-6 h-auto max-h-28 w-auto max-w-full object-contain"
               src="{{ $heroBannerImage.RelPermalink }}"
               alt="{{ .Site.Params.homepage.heroBannerAlt | default "Homepage banner" }}">
           {{ end }}
-          {{ if or $homeLogoLightURL $homeLogoDarkURL }}
-              <div
-                class="pointer-events-none absolute"
-                  style="left: 50%; top: 50%; z-index: 30; transform: translate(-50%, -145%);">
-              {{ if $homeLogoLightURL }}
-                <img
-                  class="home-hero-logo nozoom h-auto w-auto object-contain dark:hidden"
-                  src="{{ $homeLogoLightURL }}"
-                  alt="Lab logo">
+          <div id="hero-content" class="flex flex-col items-center justify-center transition-opacity duration-700 w-full" style="z-index: 20;">
+            <div class="rounded-2xl bg-white/80 px-12 py-6 shadow-lg backdrop-blur-sm dark:bg-neutral-900/60 opacity-0 transition-opacity duration-700 mx-auto w-full max-w-2xl">
+              {{ if or $homeLogoLightURL $homeLogoDarkURL }}
+                <div class="mb-4 flex justify-center">
+                  {{ if $homeLogoLightURL }}
+                    <img
+                      class="home-hero-logo nozoom h-auto w-auto object-contain dark:hidden"
+                      src="{{ $homeLogoLightURL }}"
+                      alt="Lab logo">
+                  {{ end }}
+                  {{ if $homeLogoDarkURL }}
+                    <img
+                      class="home-hero-logo nozoom hidden h-auto w-auto object-contain dark:block"
+                      src="{{ $homeLogoDarkURL }}"
+                      alt="Lab logo">
+                  {{ end }}
+                </div>
               {{ end }}
-              {{ if $homeLogoDarkURL }}
-                <img
-                  class="home-hero-logo nozoom hidden h-auto w-auto object-contain dark:block"
-                  src="{{ $homeLogoDarkURL }}"
-                  alt="Lab logo">
-              {{ end }}
+              <h1
+                class="home-landing-title text-3xl sm:text-4xl md:text-5xl font-extrabold">
+                {{ .Title | emojify }}
+              </h1>
             </div>
-          {{ end }}
-            <h1
-              class="home-landing-title absolute text-3xl sm:text-4xl md:text-6xl font-extrabold"
-              style="left: 50%; top: 45%; z-index: 10; width: 90%; transform: translate(-50%, -50%);">
-            {{ .Title | emojify }}
-          </h1>
-          <div
-            id="scroll-arrow"
-            class="scroll-indicator fixed opacity-0 transition-opacity duration-500"
-            style="left: 50%; bottom: 2rem; z-index: 50; transform: translateX(-50%);">
-            <svg class="h-6 w-6 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -238,7 +232,16 @@
   </div>
 </article>
 
-<section class="relative z-10 mt-4 sm:mt-8 mb-8 sm:mb-16">
+<div
+  id="scroll-arrow"
+  class="scroll-indicator"
+  style="position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 50;">
+  <svg class="h-6 w-6 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+  </svg>
+</div>
+
+<section id="home-news" class="relative z-10 mt-4 sm:mt-8 mb-8 sm:mb-16 opacity-0 transition-opacity duration-600">
   <div class="mx-auto max-w-4xl px-6 prose dark:prose-invert">
     {{ .Content }}
   </div>
@@ -352,10 +355,10 @@
       }
 
       function onMobileMenuToggle() {
-        completeIntro();
+        showUI();
       }
 
-      function completeIntro() {
+      function showUI() {
         if (completed) return;
         completed = true;
 
@@ -375,41 +378,42 @@
         hideVideo(mobileVideoLight);
         hideVideo(mobileVideoDark);
 
-        if (backgroundVideo) {
-          backgroundVideo.pause();
-          backgroundVideo.classList.add("is-hidden");
-        }
-
         document.body.classList.remove("home-intro-active");
         document.body.classList.add("home-intro-complete");
         clearListeners();
+
+        var heroContent = document.getElementById("hero-content");
+        if (heroContent) {
+          var card = heroContent.querySelector("div");
+          if (card) card.style.opacity = "1";
+        }
       }
 
       function onScroll() {
         if (window.scrollY > 0 || window.scrollY >= threshold) {
-          completeIntro();
+          showUI();
         }
       }
 
       function onWheel(event) {
         if (event && Math.abs(event.deltaY) > 0) {
-          completeIntro();
+          showUI();
         }
       }
 
       function onTouchMove() {
-        completeIntro();
+        showUI();
       }
 
       function onVideoClick() {
-        completeIntro();
+        showUI();
       }
 
       function onPointerDown(event) {
         if (completed) return;
         if (!overlay || overlay.classList.contains("is-hidden")) return;
         if (event && event.pointerType === "mouse" && event.button !== 0) return;
-        completeIntro();
+        showUI();
       }
 
       function onVideoEnded() {
@@ -418,10 +422,10 @@
           if (endHoldMs > 0) {
             endHoldTimer = window.setTimeout(function () {
               endHoldTimer = null;
-              completeIntro();
+              showUI();
             }, endHoldMs);
           } else {
-            completeIntro();
+            showUI();
           }
         }
       }
@@ -431,7 +435,7 @@
       }
 
       if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        completeIntro();
+        showUI();
         return;
       }
 
@@ -465,7 +469,7 @@
       onScroll();
 
       completionTimer = window.setTimeout(function () {
-        completeIntro();
+        showUI();
       }, 15000);
     })();
   </script>

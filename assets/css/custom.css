@@ -120,6 +120,37 @@ body:not(.home-intro-active) .main-menu {
   }
 }
 
+/* Hero content card — hidden during intro, shown after */
+#hero-content > div:first-child {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* News section — hidden during intro, shown after */
+#home-news h2 {
+  color: #111827;
+}
+
+html.dark #home-news h2 {
+  color: #f3f4f6 !important;
+}
+
+#home-news {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.home-intro-active #home-news {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.home-intro-complete #home-news {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.6s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-intro-overlay {
     transition: none;
@@ -182,11 +213,11 @@ body:not(.home-intro-active) .main-menu {
 /* Elegant dark mode palette override (cool slate tone) */
 /* Landing page title color */
 .home-landing-title {
-  color: #3e4554;
+  color: #111827;
 }
 
 html.dark .home-landing-title {
-  color: rgb(var(--color-neutral)) !important;
+  color: #f3f4f6 !important;
 }
 
 html:not(.dark) body {
@@ -348,7 +379,7 @@ html.dark .publication-card a:hover {
 }
 
 .contact-card {
-  max-width: 32rem;
+  max-width: none;
 }
 
 /* Research highlighted text should match link color */
@@ -403,6 +434,7 @@ html.dark .photo-item:hover {
 
 /* Scroll indicator arrow */
 .scroll-indicator {
+  opacity: 0;
   animation: gentle-bounce 2s ease-in-out infinite;
 }
 
@@ -411,8 +443,7 @@ body.home-intro-active .scroll-indicator {
   animation: none;
 }
 
-body.home-intro-complete .scroll-indicator,
-body:not(.home-intro-active) .scroll-indicator {
+body.home-intro-complete .scroll-indicator {
   opacity: 1;
 }
 
