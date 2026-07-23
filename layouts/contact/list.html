@@ -6,14 +6,5 @@
         <div class="prose mt-5 max-w-none dark:prose-invert">{{ . }}</div>
       {{ end }}
     </header>
-
-    {{ if gt (len .Pages) 0 }}
-      <section class="space-y-10 w-full">
-        {{ range .Pages.ByWeight }}
-          {{ partial "article-link/simple.html" . }}
-        {{ end }}
-      </section>
-      {{ partial "pagination.html" . }}
-    {{ end }}
   </article>
 {{ end }}

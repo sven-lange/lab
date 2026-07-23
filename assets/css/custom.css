@@ -340,3 +340,32 @@ html.dark .publication-card a:hover {
 .contact-card {
   max-width: 32rem;
 }
+
+/* Research highlighted text should match link color */
+.research-card strong,
+.publication-card strong {
+  color: rgb(var(--color-primary-600));
+  font-weight: 600;
+}
+
+html.dark .research-card strong,
+html.dark .publication-card strong {
+  color: rgb(var(--color-primary-400));
+}
+
+/* Card shadows - light mode has subtle shadow, dark mode needs lighter shadow */
+.research-card,
+.publication-card,
+.contact-card,
+.position-card,
+.people-member {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+html.dark .research-card,
+html.dark .publication-card,
+html.dark .contact-card,
+html.dark .position-card,
+html.dark .people-member {
+  box-shadow: 0 1px 3px 0 rgb(255 255 255 / 0.05), 0 1px 2px -1px rgb(255 255 255 / 0.05);
+}
