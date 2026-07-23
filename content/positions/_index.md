@@ -13,7 +13,7 @@ We are always interested in motivated and talented people, even if there is curr
 
 <div class="mt-8 space-y-5">
 
-<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45">
+<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
   <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Graduate Students</h3>
   <p class="mt-2 text-neutral-700 dark:text-neutral-300">
     If you are a graduate student, please reach out to
@@ -22,7 +22,7 @@ We are always interested in motivated and talented people, even if there is curr
   </p>
 </div>
 
-<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45">
+<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
   <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Postdoctoral Fellows</h3>
   <p class="mt-2 text-neutral-700 dark:text-neutral-300">
     Applicants must have a Ph.D. in cell biology, biochemistry, biophysics, or a related field.
@@ -31,7 +31,7 @@ We are always interested in motivated and talented people, even if there is curr
   </p>
 </div>
 
-<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45">
+<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
   <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Current Openings</h3>
   <p class="mt-2 text-neutral-700 dark:text-neutral-300">
     No active postings at this time.

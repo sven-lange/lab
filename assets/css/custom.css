@@ -366,6 +366,25 @@ html.dark .research-card,
 html.dark .publication-card,
 html.dark .contact-card,
 html.dark .position-card,
-html.dark .people-member {
+html.dark .people-member,
+html.dark .photo-item {
   box-shadow: 0 1px 3px 0 rgb(255 255 255 / 0.05), 0 1px 2px -1px rgb(255 255 255 / 0.05);
+}
+
+/* Photos page gallery */
+.photos-grid {
+  column-gap: 1rem;
+}
+
+.photo-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .photo-item:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }

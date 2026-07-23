@@ -31,14 +31,19 @@
 	weight = 40
 
 [[main]]
-	name = "Contact"
-	pageRef = "contact"
-	weight = 50
+  name = "Contact"
+  pageRef = "contact"
+  weight = 50
 
 [[main]]
-	name = "Join Us"
-	pageRef = "positions"
-	weight = 60
+  name = "Photos"
+  pageRef = "photos"
+  weight = 55
+
+[[main]]
+  name = "Join Us"
+  pageRef = "positions"
+  weight = 60
 
 #[[main]]
 #  name = "Parent"

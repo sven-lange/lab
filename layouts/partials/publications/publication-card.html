@@ -1,8 +1,8 @@
-{{ $doi := .Params.doi | default "" }}
-{{ $doiURL := .Params.doiURL | default "" }}
-{{ $authorsRaw := .Params.authorsDisplay | default "" }}
-{{ $authors := .Params.authorsDisplay | default "" }}
-{{ $authors := .RenderString (dict "display" "inline") $authorsRaw }}
+{{ $doi := .Page.Params.doi | default "" }}
+{{ $doiURL := .Page.Params.doiURL | default "" }}
+{{ $authorsRaw := .Page.Params.authorsDisplay | default "" }}
+{{ $authors := .Page.Params.authorsDisplay | default "" }}
+{{ $authors := .Page.RenderString (dict "display" "inline") $authorsRaw }}
 {{ $authors = replaceRE `\*([^A-Za-z0-9])` "<sup>*</sup>$1" $authors }}
 {{ $authors = replaceRE `#([^A-Za-z0-9])` "<sup>#</sup>$1" $authors }}
 {{ $authors = replaceRE `\*$` "<sup>*</sup>" $authors }}
@@ -11,7 +11,9 @@
   {{ $doiURL = printf "https://doi.org/%s" $doi }}
 {{ end }}
 
-<div class="publication-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45">
+{{ $animation := "fade-left" }}
+
+<div class="publication-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="{{ $animation }}">
   <div class="publication-card-content">
     <div class="leading-relaxed text-neutral-800 dark:text-neutral-200">
       <span>{{ $authors | safeHTML }}</span>
@@ -21,15 +23,15 @@
           class="font-medium"
           href="{{ $doiURL | safeURL }}"
           target="_blank"
-          rel="noopener noreferrer">{{ .Title }}</a><span>.</span>
+          rel="noopener noreferrer">{{ .Page.Title }}</a><span>.</span>
       {{ else }}
-        <span class="font-medium text-neutral-900 dark:text-neutral-100">{{ .Title }}</span><span>.</span>
+        <span class="font-medium text-neutral-900 dark:text-neutral-100">{{ .Page.Title }}</span><span>.</span>
       {{ end }}
-      {{ with .Params.journal }}
+      {{ with .Page.Params.journal }}
         <span> </span><em>{{ . }}</em>
       {{ end }}
 
-      {{ with .Params.authorNotes }}
+      {{ with .Page.Params.authorNotes }}
         <div class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{{ . | markdownify }}</div>
       {{ end }}
     </div>

@@ -19,8 +19,10 @@
             </div>
 
             <div class="space-y-5">
+              {{ $index := 0 }}
               {{ range sort (sort .Pages "Weight" "asc") "Date" "desc" }}
-                {{ partial "publications/publication-card.html" . }}
+                {{ partial "publications/publication-card.html" (dict "Page" . "Index" $index) }}
+                {{ $index = add $index 1 }}
               {{ end }}
             </div>
           </section>

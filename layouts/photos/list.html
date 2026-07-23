@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <article class="mx-auto max-w-5xl px-6 py-10">
+    <header class="mb-10">
+      <h1 class="text-4xl font-extrabold text-neutral-900 dark:text-neutral-100">{{ .Title }}</h1>
+      {{ with .Content }}
+        <div class="prose mt-5 max-w-none dark:prose-invert">{{ . }}</div>
+      {{ end }}
+    </header>
+
+    {{ if gt (len .Pages) 0 }}
+      <div class="photos-grid columns-1 gap-4 sm:columns-2 lg:columns-3">
+        {{ range .Pages.ByWeight }}
+          <div class="mb-4 break-inside-avoid" data-scroll-reveal="fade-left">
+            {{ partial "photos/photo-card.html" . }}
+          </div>
+        {{ end }}
+      </div>
+    {{ else }}
+      <div class="rounded-2xl bg-white/80 p-8 text-center shadow-sm backdrop-blur-sm dark:bg-neutral-900/45">
+        <p class="text-neutral-700 dark:text-neutral-300">Lab photos coming soon - check back later.</p>
+      </div>
+    {{ end }}
+  </article>
+{{ end }}

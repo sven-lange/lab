@@ -10,7 +10,7 @@ showTableOfContents = false
 
 We welcome inquiries from prospective students, post-docs and collaborators.
 
-<div class="contact-card mt-8 rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45">
+<div class="contact-card mt-8 rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
   <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Sven M. Lange, Ph.D.</h3>
   <p class="mt-1 text-base italic text-neutral-700 dark:text-neutral-300">Assistant Professor</p>
   
