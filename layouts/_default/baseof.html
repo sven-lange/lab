@@ -69,19 +69,22 @@
     </script>
     <script>
       (function () {
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (!meta) return;
         var lightColor = '#efe6d3';
         var darkColor = '#262626';
         function updateThemeColor() {
           var isDark = document.documentElement.classList.contains('dark');
-          meta.setAttribute('content', isDark ? darkColor : lightColor);
+          var color = isDark ? darkColor : lightColor;
+          var old = document.querySelector('meta[name="theme-color"]');
+          if (old) old.remove();
+          var meta = document.createElement('meta');
+          meta.name = 'theme-color';
+          meta.content = color;
+          document.head.appendChild(meta);
         }
         var observer = new MutationObserver(function () {
           updateThemeColor();
         });
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-        updateThemeColor();
       })();
     </script>
   </body>
