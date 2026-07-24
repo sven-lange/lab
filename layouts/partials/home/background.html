@@ -324,7 +324,6 @@
         var mobileVideo = activeMobileVideo();
         if (mobileVideo) {
           mobileVideo.loop = false;
-          mobileVideo.addEventListener("ended", onVideoEnded);
           showVideo(mobileVideo);
         } else if (fallbackImage) {
           fallbackImage.classList.add("is-visible");
@@ -377,8 +376,10 @@
           endHoldTimer = null;
         }
 
-        hideVideo(mobileVideoLight);
-        hideVideo(mobileVideoDark);
+        if (!usingMobileVideoMode) {
+          hideVideo(mobileVideoLight);
+          hideVideo(mobileVideoDark);
+        }
 
         document.body.classList.remove("home-intro-active");
         document.body.classList.add("home-intro-complete");
