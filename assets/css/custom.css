@@ -442,18 +442,19 @@ html:not(.dark) .people-member,
 html:not(.dark) .news-card,
 html:not(.dark) .news-heading-card,
 html:not(.dark) .research-heading-card {
-  background-color: rgba(239, 230, 211, 0.8) !important;
+  background-color: rgba(239, 230, 211, 0.6) !important;
 }
 
-/* Remove top margin from heading inside cards */
+/* Remove margins from heading inside cards */
 .news-heading-card h2,
-.research-heading-card h1 {
-  margin-top: 0;
+.research-heading-card h1,
+.news-card h3 {
+  margin: 0;
 }
 
-/* Hero card - light mode: page background at 90% (more opaque for readability) */
+/* Hero card - light mode: page background at 60% */
 html:not(.dark) #hero-content > div:first-child {
-  background-color: rgba(239, 230, 211, 0.9) !important;
+  background-color: rgba(239, 230, 211, 0.6) !important;
 }
 
 /* Card shadows - light mode has subtle shadow, dark mode needs lighter shadow */

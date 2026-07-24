@@ -16,9 +16,7 @@ We are always interested in motivated and talented people, even if there is curr
 <div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
   <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Graduate Students</h3>
   <p class="mt-2 text-neutral-700 dark:text-neutral-300">
-    If you are a graduate student, please reach out to
-    {{< email email="sml4006@med.cornell.edu" text="Dr Sven Lange" >}}
-    directly.
+    If you are a graduate student, please {{< email email="sml4006@med.cornell.edu" text="reach out" >}} directly.
   </p>
 </div>
 
@@ -26,8 +24,7 @@ We are always interested in motivated and talented people, even if there is curr
   <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Postdoctoral Fellows</h3>
   <p class="mt-2 text-neutral-700 dark:text-neutral-300">
     Applicants must have a Ph.D. in cell biology, biochemistry, biophysics, or a related field.
-    Please send a cover letter, CV, and the contact information of two referees to
-    {{< email email="sml4006@med.cornell.edu" text="Dr Sven Lange" >}}.
+    Please {{< email email="sml4006@med.cornell.edu" text="send" >}} a cover letter, CV, and the contact information of two referees.
   </p>
 </div>
 
