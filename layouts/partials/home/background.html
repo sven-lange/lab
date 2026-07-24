@@ -449,6 +449,18 @@
 
       if (shouldUseMobileVideoMode()) {
         activateMobileVideoMode();
+
+        var darkModeObserver = new MutationObserver(function () {
+          var active = activeMobileVideo();
+          var inactive = active === mobileVideoLight ? mobileVideoDark : mobileVideoLight;
+          if (active && active.classList.contains("is-visible")) return;
+          if (active) {
+            hideVideo(inactive);
+            active.loop = false;
+            showVideo(active);
+          }
+        });
+        darkModeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
       } else if (backgroundVideo) {
         backgroundVideo.loop = false;
         backgroundVideo.addEventListener("ended", onVideoEnded);
