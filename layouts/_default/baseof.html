@@ -67,6 +67,23 @@
         elements.forEach(function (el) { observer.observe(el); });
       })();
     </script>
+    <script>
+      (function () {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (!meta) return;
+        var lightColor = '#efe6d3';
+        var darkColor = '#262626';
+        function updateThemeColor() {
+          var isDark = document.documentElement.classList.contains('dark');
+          meta.setAttribute('content', isDark ? darkColor : lightColor);
+        }
+        var observer = new MutationObserver(function () {
+          updateThemeColor();
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        updateThemeColor();
+      })();
+    </script>
   </body>
   {{ if site.Params.buymeacoffee.globalWidget | default false }}
     <script
