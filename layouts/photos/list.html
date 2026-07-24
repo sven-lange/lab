@@ -2,13 +2,14 @@
   <article class="mx-auto max-w-5xl px-6 py-10">
     <header class="mb-10">
       <h1 class="text-4xl font-extrabold text-neutral-900 dark:text-neutral-100">{{ .Title }}</h1>
-      {{ with .Content }}
-        <div class="prose mt-5 max-w-none dark:prose-invert">{{ . }}</div>
-      {{ end }}
     </header>
 
+    {{ with .Content }}
+      <div class="prose max-w-none dark:prose-invert">{{ . }}</div>
+    {{ end }}
+
     {{ if gt (len .Pages) 0 }}
-      <div class="photos-grid columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div class="mt-5 photos-grid columns-1 gap-4 sm:columns-2 lg:columns-3">
         {{ range .Pages.ByWeight }}
           <div class="mb-4 break-inside-avoid" data-scroll-reveal="fade-left">
             {{ partial "photos/photo-card.html" . }}
@@ -20,5 +21,18 @@
         <p class="text-neutral-700 dark:text-neutral-300">Lab photos coming soon - check back later.</p>
       </div>
     {{ end }}
+
+    <div class="contact-card relative mt-10 overflow-hidden rounded-2xl shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left" style="background: rgba(239,230,211,0.75); height: 588px;">
+      <video
+        class="absolute inset-0 h-full w-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true">
+        <source src="/img/animations/213564_pingpong.mp4" type="video/mp4">
+      </video>
+    </div>
   </article>
 {{ end }}

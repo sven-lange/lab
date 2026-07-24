@@ -1,35 +1,38 @@
 {{ define "main" }}
-  {{ $researchBannerVideo := "" }}
-  {{ $researchBannerVideoPath := .Params.bannerVideo | default .Site.Params.research.bannerVideo }}
-  {{ with $researchBannerVideoPath }}
+  {{ $researchVideo := "" }}
+  {{ $researchVideoPath := .Params.bannerVideo | default .Site.Params.research.bannerVideo }}
+  {{ with $researchVideoPath }}
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $researchBannerVideo = resources.GetRemote . }}
+      {{ $researchVideo = resources.GetRemote . }}
     {{ else }}
-      {{ $researchBannerVideo = resources.Get . }}
+      {{ $researchVideo = resources.Get . }}
     {{ end }}
   {{ end }}
-  {{ if $researchBannerVideo }}
-    <div class="relative left-1/2 mb-8 w-screen -translate-x-1/2">
+
+  {{ if $researchVideo }}
+    <div class="fixed inset-x-0 top-14 z-0">
       <video
-        class="block h-[280px] w-full object-cover md:h-[420px]"
-        {{ if .Site.Params.research.bannerVideoAutoplay | default true }}autoplay{{ end }}
-        {{ if .Site.Params.research.bannerVideoMuted | default true }}muted{{ end }}
-        {{ if .Site.Params.research.bannerVideoLoop | default true }}loop{{ end }}
-        {{ if .Site.Params.research.bannerVideoPlaysInline | default true }}playsinline{{ end }}
-        {{ if .Site.Params.research.bannerVideoControls | default false }}controls{{ end }}
+        id="research-bg-video"
+        class="block w-full object-cover"
+        style="height: 280px;"
+        autoplay
+        muted
+        loop
+        playsinline
         preload="metadata"
-        aria-label="Research banner video">
-        <source src="{{ $researchBannerVideo.RelPermalink }}" type="video/mp4">
+        aria-hidden="true">
+        <source src="{{ $researchVideo.RelPermalink }}" type="video/mp4">
       </video>
     </div>
   {{ end }}
 
-  <article class="mx-auto max-w-5xl px-6 py-10">
-    <header class="mb-10">
+  <article class="relative z-10 mx-auto max-w-5xl px-6 pb-10" style="padding-top: 340px;">
+    <div class="research-heading-card rounded-2xl px-6 py-4 shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left">
       <h1 class="text-4xl font-extrabold text-neutral-900 dark:text-neutral-100">{{ .Title }}</h1>
-      {{ with .Content }}
-        <div class="prose mt-5 max-w-none dark:prose-invert">{{ . }}</div>
-      {{ end }}
-    </header>
+    </div>
+
+    {{ with .Content }}
+      <div class="mt-5">{{ . }}</div>
+    {{ end }}
   </article>
 {{ end }}

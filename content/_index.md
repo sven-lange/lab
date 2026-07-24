@@ -10,7 +10,7 @@ showTableOfContents = false
 showBreadcrumbs = false
 +++
 
-<div class="rounded-2xl bg-white/80 px-6 py-4 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
+<div class="news-heading-card rounded-2xl px-6 py-4 shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left">
 
 ## News {#news}
 
@@ -18,8 +18,8 @@ showBreadcrumbs = false
 
 <div class="mt-5 space-y-4">
 
-<div class="news-card rounded-2xl bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
-  <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">April 2026</h3>
+<div class="news-card rounded-2xl p-5 shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left">
+  <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">July 2026</h3>
   <ul class="mt-2 list-inside list-disc space-y-1 text-neutral-900 dark:text-neutral-100">
     <li>The Lange Lab website is now live.</li>
     <li>Open positions and first project-specific updates coming soon.</li>

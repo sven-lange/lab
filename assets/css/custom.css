@@ -123,7 +123,12 @@ body:not(.home-intro-active) .main-menu {
 /* Hero content card — hidden during intro, shown after */
 #hero-content > div:first-child {
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.8s ease;
+}
+
+body.home-intro-complete #hero-content > div:first-child {
+  pointer-events: auto;
 }
 
 /* News section — hidden during intro, shown after */
@@ -131,8 +136,22 @@ body:not(.home-intro-active) .main-menu {
   color: #111827;
 }
 
+#home-news,
+#home-news p,
+#home-news li,
+#home-news span {
+  color: #111827;
+}
+
 html.dark #home-news h2 {
   color: #f3f4f6 !important;
+}
+
+html.dark #home-news,
+html.dark #home-news p,
+html.dark #home-news li,
+html.dark #home-news span {
+  color: #e5e7eb;
 }
 
 #home-news {
@@ -382,6 +401,26 @@ html.dark .publication-card a:hover {
   max-width: none;
 }
 
+.email-link {
+  color: rgb(var(--color-primary-600));
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.14em;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.email-link:hover {
+  text-decoration-color: rgb(var(--color-primary-600));
+}
+
+html.dark .email-link {
+  color: rgb(var(--color-primary-400));
+}
+
+html.dark .email-link:hover {
+  text-decoration-color: rgb(var(--color-primary-400));
+}
+
 /* Research highlighted text should match link color */
 .research-card strong,
 .publication-card strong {
@@ -392,6 +431,29 @@ html.dark .publication-card a:hover {
 html.dark .research-card strong,
 html.dark .publication-card strong {
   color: rgb(var(--color-primary-400));
+}
+
+/* All cards - light mode: page background color at 80% opacity */
+html:not(.dark) .research-card,
+html:not(.dark) .publication-card,
+html:not(.dark) .contact-card,
+html:not(.dark) .position-card,
+html:not(.dark) .people-member,
+html:not(.dark) .news-card,
+html:not(.dark) .news-heading-card,
+html:not(.dark) .research-heading-card {
+  background-color: rgba(239, 230, 211, 0.8) !important;
+}
+
+/* Remove top margin from heading inside cards */
+.news-heading-card h2,
+.research-heading-card h1 {
+  margin-top: 0;
+}
+
+/* Hero card - light mode: page background at 90% (more opaque for readability) */
+html:not(.dark) #hero-content > div:first-child {
+  background-color: rgba(239, 230, 211, 0.9) !important;
 }
 
 /* Card shadows - light mode has subtle shadow, dark mode needs lighter shadow */

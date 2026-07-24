@@ -202,27 +202,29 @@
               alt="{{ .Site.Params.homepage.heroBannerAlt | default "Homepage banner" }}">
           {{ end }}
           <div id="hero-content" class="flex flex-col items-center justify-center transition-opacity duration-700 w-full" style="z-index: 20;">
-            <div class="rounded-2xl bg-white/80 px-12 py-6 shadow-lg backdrop-blur-sm dark:bg-neutral-900/60 opacity-0 transition-opacity duration-700 mx-auto w-full max-w-2xl">
-              {{ if or $homeLogoLightURL $homeLogoDarkURL }}
-                <div class="mb-4 flex justify-center">
-                  {{ if $homeLogoLightURL }}
-                    <img
-                      class="home-hero-logo nozoom h-auto w-auto object-contain dark:hidden"
-                      src="{{ $homeLogoLightURL }}"
-                      alt="Lab logo">
-                  {{ end }}
-                  {{ if $homeLogoDarkURL }}
-                    <img
-                      class="home-hero-logo nozoom hidden h-auto w-auto object-contain dark:block"
-                      src="{{ $homeLogoDarkURL }}"
-                      alt="Lab logo">
-                  {{ end }}
-                </div>
-              {{ end }}
-              <h1
-                class="home-landing-title text-3xl sm:text-4xl md:text-5xl font-extrabold">
-                {{ .Title | emojify }}
-              </h1>
+            <div class="rounded-2xl bg-white/90 px-12 py-6 shadow-lg backdrop-blur-sm dark:bg-neutral-900/60 opacity-0 transition-opacity duration-700 mx-auto w-full max-w-2xl">
+              <a href="/research/" class="no-underline text-inherit cursor-pointer">
+                {{ if or $homeLogoLightURL $homeLogoDarkURL }}
+                  <div class="mb-4 flex justify-center">
+                    {{ if $homeLogoLightURL }}
+                      <img
+                        class="home-hero-logo nozoom h-auto w-auto object-contain dark:hidden"
+                        src="{{ $homeLogoLightURL }}"
+                        alt="Lab logo">
+                    {{ end }}
+                    {{ if $homeLogoDarkURL }}
+                      <img
+                        class="home-hero-logo nozoom hidden h-auto w-auto object-contain dark:block"
+                        src="{{ $homeLogoDarkURL }}"
+                        alt="Lab logo">
+                    {{ end }}
+                  </div>
+                {{ end }}
+                <h1
+                  class="home-landing-title text-3xl sm:text-4xl md:text-5xl font-extrabold">
+                  {{ .Title | emojify }}
+                </h1>
+              </a>
             </div>
             </div>
           </div>
@@ -387,6 +389,11 @@
           var card = heroContent.querySelector("div");
           if (card) card.style.opacity = "1";
         }
+
+        var arrow = document.getElementById("scroll-arrow");
+        if (arrow) {
+          arrow.style.opacity = "1";
+        }
       }
 
       function onScroll() {
@@ -478,13 +485,17 @@
 (function () {
   var arrow = document.getElementById("scroll-arrow");
   if (!arrow) return;
-  var news = document.getElementById("news");
+  var news = document.getElementById("home-news");
   if (!news) return;
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
+      if (!document.body.classList.contains("home-intro-complete")) return;
       if (entry.isIntersecting) {
         arrow.style.opacity = "0";
         arrow.style.pointerEvents = "none";
+      } else {
+        arrow.style.opacity = "1";
+        arrow.style.pointerEvents = "auto";
       }
     });
   }, { threshold: 0.1 });
