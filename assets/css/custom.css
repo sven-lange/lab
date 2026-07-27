@@ -520,3 +520,49 @@ body.home-intro-complete .scroll-indicator {
     animation: none;
   }
 }
+
+/* Leaflet map — Lange Lab marker */
+.lange-lab-marker {
+  background: none;
+  border: none;
+}
+
+.lange-lab-pin {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: #c0392b;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.lange-lab-label {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #262626;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark .lange-lab-label {
+  background: rgba(38, 38, 38, 0.9);
+  color: #f5f5f5;
+}
+
+.lange-lab-pin::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #c0392b;
+}
