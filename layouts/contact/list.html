@@ -38,41 +38,47 @@
       </div>
     </div>
 
-    <div class="contact-card relative mt-5 overflow-hidden rounded-2xl shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left" style="background: rgba(239,230,211,0.6);">
-      {{ if $streetVideo }}
-        <video
-          class="absolute inset-0 h-full w-full object-cover"
-          autoplay
-          muted
-          loop
-          playsinline
-          aria-hidden="true">
-          <source src="{{ $streetVideo.RelPermalink }}" type="video/mp4">
-        </video>
-        <script>document.currentScript.previousElementSibling.playbackRate = 0.5;</script>
-      {{ end }}
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-      <div class="relative flex items-center justify-center p-6">
-        <div id="lange-lab-map" class="h-84 w-1/2 rounded-xl"></div>
-      </div>
+    {{ if $streetVideo }}
+    <div class="relative mt-5 overflow-hidden rounded-2xl shadow-sm" data-scroll-reveal="fade-left" style="background: rgba(239,230,211,0.6); height: 420px;">
+      <video
+        class="absolute inset-0 h-full w-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true">
+        <source src="{{ $streetVideo.RelPermalink }}" type="video/mp4">
+      </video>
+      <script>document.currentScript.previousElementSibling.playbackRate = 0.5;</script>
       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+      <div id="lange-lab-map" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 320px; height: 220px; border-radius: 12px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.8);"></div>
       <script>
         (function () {
-          var map = L.map("lange-lab-map", { zoomControl: false }).setView([40.76472, -73.95482], 16);
+          var map = L.map("lange-lab-map", {
+            zoomControl: false,
+            zoomSnap: 1,
+            minZoom: 2,
+            maxZoom: 18,
+            scrollWheelZoom: false,
+            dragging: true
+          }).setView([40.76472, -73.95482], 3);
           L.control.zoom({ position: "topright" }).addTo(map);
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: "abcd",
+            maxZoom: 20
           }).addTo(map);
-          var icon = L.divIcon({
+          var pin = L.divIcon({
             className: "lange-lab-marker",
             html: '<div class="lange-lab-pin"><span class="lange-lab-label">Lange Lab</span></div>',
-            iconSize: [0, 0],
-            iconAnchor: [0, 32]
+            iconSize: [12, 17],
+            iconAnchor: [6, 17]
           });
-          L.marker([40.76472, -73.95482], { icon: icon }).addTo(map);
+          L.marker([40.76472, -73.95482], { icon: pin }).addTo(map);
         })();
       </script>
     </div>
+    {{ end }}
 
     <div class="contact-card mt-5 rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
       <div class="flex flex-col items-center gap-4">
