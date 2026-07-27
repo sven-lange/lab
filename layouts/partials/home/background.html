@@ -324,6 +324,7 @@
         var mobileVideo = activeMobileVideo();
         if (mobileVideo) {
           mobileVideo.loop = false;
+          mobileVideo.addEventListener("ended", onVideoEnded);
           showVideo(mobileVideo);
         } else if (fallbackImage) {
           fallbackImage.classList.add("is-visible");
