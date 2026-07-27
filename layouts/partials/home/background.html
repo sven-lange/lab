@@ -280,6 +280,7 @@
       var completionTimer = null;
       var endHoldTimer = null;
       var usingMobileVideoMode = false;
+      var introLeadMs = 1000;
 
       function activeMobileVideo() {
         var isDark = document.documentElement.classList.contains("dark");
@@ -339,14 +340,17 @@
         if (backgroundVideo) {
           backgroundVideo.removeEventListener("ended", onVideoEnded);
           backgroundVideo.removeEventListener("click", onVideoClick);
+          backgroundVideo.removeEventListener("timeupdate", onVideoTimeUpdate);
         }
         if (mobileVideoLight) {
           mobileVideoLight.removeEventListener("ended", onVideoEnded);
           mobileVideoLight.removeEventListener("click", onVideoClick);
+          mobileVideoLight.removeEventListener("timeupdate", onVideoTimeUpdate);
         }
         if (mobileVideoDark) {
           mobileVideoDark.removeEventListener("ended", onVideoEnded);
           mobileVideoDark.removeEventListener("click", onVideoClick);
+          mobileVideoDark.removeEventListener("timeupdate", onVideoTimeUpdate);
         }
         if (fallbackImage) {
           fallbackImage.removeEventListener("click", onVideoClick);
@@ -418,6 +422,13 @@
         showUI();
       }
 
+      function onVideoTimeUpdate(event) {
+        var video = event.target;
+        if (video.duration && video.currentTime >= video.duration - introLeadMs / 1000) {
+          showUI();
+        }
+      }
+
       function onPointerDown(event) {
         if (completed) return;
         if (!overlay || overlay.classList.contains("is-hidden")) return;
@@ -469,12 +480,15 @@
 
       if (backgroundVideo) {
         backgroundVideo.addEventListener("click", onVideoClick);
+        backgroundVideo.addEventListener("timeupdate", onVideoTimeUpdate);
       }
       if (mobileVideoLight) {
         mobileVideoLight.addEventListener("click", onVideoClick);
+        mobileVideoLight.addEventListener("timeupdate", onVideoTimeUpdate);
       }
       if (mobileVideoDark) {
         mobileVideoDark.addEventListener("click", onVideoClick);
+        mobileVideoDark.addEventListener("timeupdate", onVideoTimeUpdate);
       }
       if (fallbackImage) {
         fallbackImage.addEventListener("click", onVideoClick);
