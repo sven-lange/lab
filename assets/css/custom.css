@@ -566,3 +566,23 @@ body.home-intro-complete .scroll-indicator {
   border: 5px solid transparent;
   border-top-color: #c0392b;
 }
+
+/* Scroll-reveal animations (was previously injected by JS — now static so
+   the browser paints the opacity:0 state before the observer fires) */
+[data-scroll-reveal] {
+  opacity: 0;
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+[data-scroll-reveal="fade-right"] {
+  transform: translateX(-40px);
+}
+[data-scroll-reveal="fade-left"] {
+  transform: translateX(40px);
+}
+[data-scroll-reveal="fade-up"] {
+  transform: translateY(40px);
+}
+[data-scroll-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0);
+}

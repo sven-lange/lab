@@ -40,17 +40,7 @@
     <!-- Scroll-reveal animations (bidirectional) -->
     <script>
       (function () {
-        var duration = 600;
         var offset = 50;
-
-        var style = document.createElement('style');
-        style.textContent =
-          '[data-scroll-reveal]{opacity:0;transition:opacity '+duration+'ms ease-out,transform '+duration+'ms ease-out}' +
-          '[data-scroll-reveal="fade-right"]{transform:translateX(-40px)}' +
-          '[data-scroll-reveal="fade-left"]{transform:translateX(40px)}' +
-          '[data-scroll-reveal="fade-up"]{transform:translateY(40px)}' +
-          '[data-scroll-reveal].is-visible{opacity:1;transform:translate(0)}';
-        document.head.appendChild(style);
 
         var elements = document.querySelectorAll('[data-scroll-reveal]');
 
