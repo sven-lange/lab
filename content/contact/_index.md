@@ -8,4 +8,4 @@ showReadingTime = false
 showTableOfContents = false
 +++
 
-We welcome inquiries from prospective students, post-docs and collaborators.
+We welcome inquiries from prospective students, postdocs and collaborators.

@@ -24,5 +24,5 @@ featured = "/img/people/Lange_Sven.jpg"
   ]
 +++
 
-Sven leads the lab's research program. Sven completed his B.Sc. and M.Sc. in 2015 in Germany before moving to Scotland for his Ph.D. with [Sir Philip Cohen](https://en.wikipedia.org/wiki/Philip_Cohen_(British_biochemist)) at the MRC Protein Phosphorylation and Ubiquitylation Unit (MRC PPU) in Dundee. He then completed postdocotral training with [Yogesh Kulathu](https://www.kulathulab.org/), also at the MRC PPU, and with [Alan Brown](https://brown.hms.harvard.edu/) at Harvard Medical School, Boston. He was awarded a Sara Elizabeth O'Brien Trust Postdoc Fellowship in 2023 and appointed to Assistant Professor in September 2026.
+Sven leads the lab's research program. Sven completed his B.Sc. and M.Sc. in 2015 in Germany before moving to Scotland for his Ph.D. with [Sir Philip Cohen](https://en.wikipedia.org/wiki/Philip_Cohen_(British_biochemist)) at the MRC Protein Phosphorylation and Ubiquitylation Unit (MRC PPU) in Dundee. He then completed postdoctoral training with [Yogesh Kulathu](https://www.kulathulab.org/), also at the MRC PPU, and with [Alan Brown](https://brown.hms.harvard.edu/) at Harvard Medical School, Boston. He was awarded a Sara Elizabeth O'Brien Trust Postdoctoral Fellowship in 2023 and appointed as Assistant Professor in September 2026.
 

@@ -18,7 +18,7 @@ cardView = false
     The ubiquitin system represents one of biology's most sophisticated regulatory networks, controlling virtually every cellular process through the formation of diverse chain architectures that are decoded by ubiquitin-binding domains with remarkable specificity. While the degradative functions of ubiquitination are well-established, we are only beginning to understand how this system orchestrates the complex trafficking events that maintain cellular organization and respond to environmental challenges. The Lange Lab's research program will address fundamental gaps in our understanding of <strong>how ubiquitin signals are interpreted to control intracellular transport</strong>.
   </p>
   <p class="mt-2 text-neutral-700 dark:text-neutral-300">
-    We employ a multi-disciplinary strategy combining structural biology, biochemistry, bioinformatics, optical microscopy and proteomics approaches to investigate ubiquitin-mediated transport mechanisms across all scales of a cell.
+    We employ a multi-disciplinary strategy combining structural biology, biochemistry, bioinformatics, optical microscopy, and proteomics to investigate ubiquitin-mediated transport mechanisms across all scales of a cell.
   </p>
 </div>
 
