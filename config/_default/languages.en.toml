@@ -13,7 +13,7 @@ title = "LANGE LAB"
   logoDark = "android-chrome-512x512_w.png"
   logo = "android-chrome-512x512_b.png"
   # secondaryLogo = "img/secondary-logo.png"
-  # description = "My awesome website"
+  description = "Lange Lab: Mechanisms of Ubiquitin-Mediated Transport"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [params.author]
