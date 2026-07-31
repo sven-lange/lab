@@ -27,7 +27,6 @@ disableTextInHeader = false
 
 # defaultBackgroundImage = "IMAGE.jpg" # used as default for background images
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
-# defaultSocialImage = "/img/thumbnail_logo_w.png" # NOTE: only works with files in assets/, not static/. Superseded by `images` below.
 images = ["/img/banner_dark.png"] # used as default for social media sharing (Open Graph and Twitter) - Hugo-native mechanism
 hotlinkFeatureImage = false
 # Thumbnail aspect ratio as a number (e.g., "1.5", "1.0", "1.777")
@@ -55,18 +54,11 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "img/lab-background.gif" # used in: hero, card, and background
   heroLogoLight = "android-chrome-512x512_b.png"
   heroLogoDark = "android-chrome-512x512_w.png"
   heroLogo = "android-chrome-192x192.png" # high-resolution logo shown above homepage title
   heroBannerImage = "" # optional static banner shown above the homepage title
   heroBannerAlt = "" # optional alt text for the homepage banner image
-  heroVideo = "" # optional video shown below the homepage title
-  heroVideoAutoplay = true
-  heroVideoMuted = true
-  heroVideoLoop = true
-  heroVideoPlaysInline = true
-  heroVideoControls = false
   introAnimationVideo = "img/animations/intro.webm" # full-screen intro animation for Home
   introAnimationMobileLightVideo = "img/animations/intro_light.mp4"
   introAnimationMobileDarkVideo = "img/animations/intro_dark.mp4"

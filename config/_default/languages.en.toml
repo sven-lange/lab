@@ -19,7 +19,7 @@ title = "LANGE LAB"
 [params.author]
   name = "Sven M. Lange"
 #   email = "youremail@example.com"
-  image = "img/Lange_Sven.jpg"
+  image = "img/people/Lange_Sven.jpg"
 #   imageQuality = 96
 #   headline = "I'm only human"
 #   bio = "A little bit about you"

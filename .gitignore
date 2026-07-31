@@ -41,8 +41,20 @@ wheels/
 # Agent configuration files
 AGENTS.md
 INSTRUCTIONS.md
+.agents/
 docs/
 COLOR_CHANGE_MAP.md
+
+# Secrets/credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
 
 # IDE files
 .vscode/
@@ -79,4 +91,3 @@ COLOR_CHANGE_MAP.md
 *.bak
 *.old
 *.orig
-
