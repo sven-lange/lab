@@ -21,7 +21,7 @@ showBreadcrumbs = false
 <div class="news-card rounded-2xl p-5 shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left">
   <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">August 2026</h3>
   <ul class="mt-2 list-inside list-disc space-y-1 text-neutral-900 dark:text-neutral-100">
-    <li>The Simons Foundation awarded a Simons Empire Faculty Fellowship that will support the Lange Lab over the next 3 years!</li>
+    <li>The [Simons Foundation International](https://www.sfi.org.bm/) awarded a Simons Empire Faculty Fellowship that will support the Lange Lab over the next 3 years!</li>
   </ul>
 </div>
 </div>
