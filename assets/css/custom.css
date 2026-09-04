@@ -450,7 +450,21 @@ html.dark .news-card {
 
 /* Photos page gallery */
 .photos-grid {
-  column-gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .photos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photos-grid {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 .photo-item {

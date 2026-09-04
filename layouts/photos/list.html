@@ -9,9 +9,9 @@
     {{ end }}
 
     {{ if gt (len .Pages) 0 }}
-      <div class="mt-5 photos-grid columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div class="mt-5 photos-grid">
         {{ range .Pages.ByWeight }}
-          <div class="mb-4 break-inside-avoid" data-scroll-reveal="fade-left">
+          <div data-scroll-reveal="fade-left">
             {{ partial "photos/photo-card.html" . }}
           </div>
         {{ end }}
@@ -21,18 +21,5 @@
         <p class="text-neutral-700 dark:text-neutral-300">Lab photos coming soon - check back later.<br>Enjoy this <a href="https://en.wikipedia.org/wiki/Montezuma_oropendola" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline underline-offset-2">Montezuma oropendola</a> in the meantime.</p>
       </div>
     {{ end }}
-
-    <div class="contact-card relative mt-10 overflow-hidden rounded-2xl shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left" style="background: rgba(239,230,211,0.6); height: 588px;">
-      <video
-        class="absolute inset-0 h-full w-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        aria-hidden="true">
-        <source src="/img/animations/213564_pingpong.mp4" type="video/mp4">
-      </video>
-    </div>
   </article>
 {{ end }}

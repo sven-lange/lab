@@ -1,20 +1,51 @@
 {{ $photo := .Params.featured | default .Params.image }}
 {{ if $photo }}
   {{ $photoURL := $photo }}
+  {{ $photoResource := false }}
+  {{ $desktopSize := "317px" }}
+  {{ if eq (.Params.gallery_size | default "narrow") "wide" }}
+    {{ $desktopSize = "635px" }}
+  {{ end }}
+  {{ $photoSizes := printf "(min-width: 1024px) %s, (min-width: 640px) calc((100vw - 4.5rem) / 2), calc(100vw - 3rem)" $desktopSize }}
   {{ if not (or (strings.HasPrefix $photo "http:") (strings.HasPrefix $photo "https:")) }}
     {{ $assetPath := strings.TrimPrefix "/" $photo }}
-    {{ $photoResource := resources.Get $assetPath }}
-    {{ if $photoResource }}
-      {{ $photoURL = $photoResource.RelPermalink }}
-    {{ else }}
+    {{ $photoResource = resources.Get $assetPath }}
+    {{ if not $photoResource }}
       {{ $photoURL = $photo | relURL }}
     {{ end }}
   {{ end }}
   <figure class="photo-item group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45">
-    <img
-      src="{{ $photoURL }}"
-      alt="{{ .Title }}"
-      class="h-auto w-full object-cover transition duration-300 group-hover:scale-105">
+    {{ if $photoResource }}
+      {{ $jpeg480 := $photoResource.Resize "480x" }}
+      {{ $jpeg800 := $photoResource.Resize "800x" }}
+      {{ $jpeg1200 := $photoResource.Resize "1200x" }}
+      {{ $webp480 := $photoResource.Resize "480x webp" }}
+      {{ $webp800 := $photoResource.Resize "800x webp" }}
+      {{ $webp1200 := $photoResource.Resize "1200x webp" }}
+      <picture>
+        <source
+          type="image/webp"
+          srcset="{{ $webp480.RelPermalink }} 480w, {{ $webp800.RelPermalink }} 800w, {{ $webp1200.RelPermalink }} 1200w"
+          sizes="{{ $photoSizes }}">
+        <img
+          src="{{ $jpeg1200.RelPermalink }}"
+          srcset="{{ $jpeg480.RelPermalink }} 480w, {{ $jpeg800.RelPermalink }} 800w, {{ $jpeg1200.RelPermalink }} 1200w"
+          sizes="{{ $photoSizes }}"
+          width="{{ $jpeg1200.Width }}"
+          height="{{ $jpeg1200.Height }}"
+          loading="lazy"
+          decoding="async"
+          alt="{{ .Params.alt | default .Title }}"
+          class="h-auto w-full object-cover transition duration-300 group-hover:scale-105">
+      </picture>
+    {{ else }}
+      <img
+        src="{{ $photoURL }}"
+        loading="lazy"
+        decoding="async"
+        alt="{{ .Params.alt | default .Title }}"
+        class="h-auto w-full object-cover transition duration-300 group-hover:scale-105">
+    {{ end }}
     {{ if .Title }}
       <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 transition duration-300 group-hover:opacity-100">
         <p class="text-sm font-medium text-white">{{ .Title }}</p>
