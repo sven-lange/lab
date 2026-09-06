@@ -9,14 +9,23 @@ showReadingTime = false
 showSummary = true
 +++
 
-We are always interested in motivated and talented people, even if there is currently no position advertised.
+
 
 <div class="mt-8 space-y-5">
 
 <div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
+  <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Current Openings</h3>
+  <p class="mt-2 text-neutral-700 dark:text-neutral-300">
+  We are always interested in motivated and talented people, even if there is currently no position advertised. <br><br>
+     September 2026: We have an <a href="https://jobs.weill.cornell.edu/NY/job/New-York-Research-Technician-I-NY-10065/1426700200/" target="_blank">opening for a Research Technician I</a> - come join us!
+  </p>
+</div>
+
+
+<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
   <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Graduate Students</h3>
   <p class="mt-2 text-neutral-700 dark:text-neutral-300">
-    If you are a graduate student, please {{< email email="sml4006@med.cornell.edu" text="reach out" >}} directly.
+    If you are a graduate student in one of the WCM affiliated programs, please {{< email email="sml4006@med.cornell.edu" text="reach out" >}} directly.
   </p>
 </div>
 
@@ -33,11 +42,6 @@ We are always interested in motivated and talented people, even if there is curr
   </p>
 </div>
 
-<div class="position-card rounded-2xl bg-white/80 p-6 shadow-sm backdrop-blur-sm dark:bg-neutral-900/45" data-scroll-reveal="fade-left">
-  <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Current Openings</h3>
-  <p class="mt-2 text-neutral-700 dark:text-neutral-300">
-    No active postings at this time.
-  </p>
-</div>
+
 
 </div>

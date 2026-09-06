@@ -19,7 +19,7 @@
     </div>
 
     {{ with .Content }}
-      <div class="mt-5 max-w-none">{{ . }}</div>
+      <div class="prose mt-5 max-w-none dark:prose-invert">{{ . }}</div>
     {{ end }}
 
     {{ if gt (len .Pages) 0 }}

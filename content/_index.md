@@ -19,9 +19,20 @@ showBreadcrumbs = false
 <div class="mt-5 space-y-4">
 
 <div class="news-card rounded-2xl p-5 shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left">
+  <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">September 2026</h3>
+  <ul class="mt-2 list-inside list-disc space-y-1 text-neutral-900 dark:text-neutral-100">
+    <li>The Lange Lab has officially opened it's doors at Weill Cornell Medicine's Department of Biochemistry and Biophysics!</li>
+      <li>We have an <a href="https://jobs.weill.cornell.edu/NY/job/New-York-Research-Technician-I-NY-10065/1426700200/" target="_blank">opening for a Research Technician I</a> - come join us!</li>
+  </ul>
+</div>
+</div>
+
+<div class="mt-5 space-y-4">
+
+<div class="news-card rounded-2xl p-5 shadow-sm backdrop-blur-sm" data-scroll-reveal="fade-left">
   <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">August 2026</h3>
   <ul class="mt-2 list-inside list-disc space-y-1 text-neutral-900 dark:text-neutral-100">
-    <li>We are grateful to the <a href="https://www.sfi.org.bm/">Simons Foundation International</a> for awarding a Simons Empire Faculty Fellowship that will support the Lange Lab over the next 3 years!</li>
+    <li>We are grateful to the <a href="https://www.sfi.org.bm/" target="_blank">Simons Foundation International</a> for awarding a Simons Empire Faculty Fellowship that will support the Lange Lab over the next 3 years!</li>
   </ul>
 </div>
 </div>
